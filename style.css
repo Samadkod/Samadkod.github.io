@@ -34,6 +34,24 @@ header nav ul li a:hover {
     color: #0073e6;
 }
 
+/* Section Home */
+.home-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.home-text {
+    flex: 1;
+    margin-right: 20px;
+}
+
+.home-photo img {
+    width: 300px; /* Ajuste la taille selon tes préférences */
+    border-radius: 50%; /* Pour une image ronde */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
 /* Sections */
 .section {
     padding: 50px;
@@ -41,24 +59,6 @@ header nav ul li a:hover {
     background-color: #fff;
     margin: 20px;
     border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-}
-
-/* Section About Me */
-.about-container {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-}
-
-.about-text {
-    flex: 1;
-    margin-right: 20px;
-}
-
-.about-photo img {
-    width: 250px; /* Ajuste la taille selon tes préférences */
-    border-radius: 50%; /* Pour une image ronde */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
