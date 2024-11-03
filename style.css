@@ -1,56 +1,82 @@
-/* Réinitialisation */
+/* Reset */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-/* Styles Globaux */
+/* Global Styles */
 body {
     font-family: Arial, sans-serif;
     color: #333;
     background-color: #f5f5f5;
 }
 
-/* Barre de navigation horizontale */
-.main-nav {
-    display: flex;
-    justify-content: center;
+/* Sidebar Navigation - masqué sur mobile */
+aside {
+    position: fixed;
+    width: 200px;
+    height: 100vh;
     background-color: #333;
-    padding: 10px 0;
+    padding-top: 20px;
 }
 
-.main-nav ul {
+aside nav ul {
     list-style: none;
-    display: flex;
-    gap: 20px;
+    padding: 0;
+    text-align: left;
 }
 
-.main-nav ul li a {
+aside nav ul li {
+    margin: 15px 0;
+}
+
+aside nav ul li a {
     color: #fff;
     text-decoration: none;
-    padding: 10px 15px;
+    padding: 10px 20px;
+    display: block;
     font-weight: bold;
 }
 
-.main-nav ul li a:hover {
+aside nav ul li a:hover {
     color: #0073e6;
 }
 
-/* Sections */
+/* Main Sections */
 .section {
-    padding: 40px 20px;
-    text-align: center;
+    margin-left: 220px; /* Space for sidebar */
+    padding: 50px 20px;
     max-width: 1200px;
-    margin: auto;
+    margin-bottom: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    text-align: center; /* Centrer les titres et boutons */
 }
 
-/* Section Home */
+/* Background Colors */
+.home, .experience, .contact {
+    background-color: #001f3f;
+    color: #fff;
+}
+
+.projects, .about {
+    background-color: #fff;
+    color: #333;
+}
+
+/* Home Section */
 .home-container {
     display: flex;
-    flex-direction: column;
     align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
     text-align: center;
+}
+
+.home-text {
+    flex: 1;
+    color: #fff;
 }
 
 .home-photo img {
@@ -60,17 +86,12 @@ body {
     margin-top: 20px;
 }
 
-/* Section Projects */
-.projects h2, .experience h2, .about h2, .contact h2 {
-    text-align: center;
-    margin-bottom: 20px;
-}
-
+/* Project Section - Empilé */
 .project-grid {
     display: flex;
-    flex-wrap: wrap;
+    flex-direction: column; /* Empile chaque projet */
     gap: 20px;
-    justify-content: center;
+    align-items: center;
 }
 
 .project-card {
@@ -78,17 +99,33 @@ body {
     padding: 20px;
     border-radius: 8px;
     text-align: center;
-    max-width: 300px;
-    width: 100%;
+    max-width: 90%; /* Limiter la largeur sur mobile */
 }
 
 .project-card img {
     width: 100%;
     height: auto;
     border-radius: 5px;
+    margin-bottom: 10px;
 }
 
-/* Bouton Voir mes projets */
+/* About Section */
+.about-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+}
+
+.about-photo img {
+    width: 150px;
+    border-radius: 50%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    margin-bottom: 20px;
+}
+
+/* Button */
 .button {
     display: inline-block;
     margin-top: 20px;
@@ -104,42 +141,40 @@ body {
     background-color: #005bb5;
 }
 
-/* Section Experience */
-.experience-item {
-    text-align: left;
-    max-width: 800px;
-    margin: auto;
-}
-
-/* Section About Me */
-.about-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-}
-
 /* Footer */
 footer {
     text-align: center;
     padding: 10px;
     background-color: #001f3f;
     color: #fff;
-    margin-top: 20px;
+    margin-left: 220px;
 }
 
-/* Responsive pour petits écrans */
+/* Responsive pour mobile */
 @media (max-width: 768px) {
-    .main-nav ul {
-        flex-direction: column;
-        align-items: center;
+    aside {
+        display: none; /* Masque la barre latérale sur mobile */
     }
-    .home-container, .experience-item, .about-container, .project-card {
-        width: 100%;
+    
+    .section {
+        margin-left: 0;
         padding: 20px;
     }
-    .project-grid {
+
+    .home-container {
         flex-direction: column;
-        gap: 10px;
+    }
+
+    .project-grid {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .project-card {
+        width: 100%;
+    }
+
+    .about-container, .experience-item {
+        text-align: center;
     }
 }
