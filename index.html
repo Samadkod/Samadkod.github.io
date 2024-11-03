@@ -7,10 +7,69 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="container">
-        <h1>Bienvenue sur mon Portfolio</h1>
-        <p>Découvrez mes projets.</p>
-        <a href="https://github.com/Samadkod" target="_blank">Voir mes projets sur GitHub</a>
-    </div>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#experience">Experience</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <section id="home" class="section">
+        <h1>Bienvenue, je suis [Ton Nom]</h1>
+        <p>Je suis un data analyst passionné par la science des données et l'analyse prédictive.</p>
+    </section>
+
+    <section id="about" class="section">
+        <h2>About Me</h2>
+        <p>Je suis diplômé en [domaine d'étude] et j'ai travaillé sur de nombreux projets de data science. Je suis passionné par le machine learning et l'analyse de données.</p>
+        <a href="#" class="button">Télécharger mon CV</a>
+    </section>
+
+    <section id="projects" class="section">
+        <h2>My Last Projects</h2>
+        <div class="project-grid">
+            <div class="project-card">
+                <h3>Projet 1</h3>
+                <p>Analyse prédictive pour la maintenance.</p>
+            </div>
+            <div class="project-card">
+                <h3>Projet 2</h3>
+                <p>Classification d'images avec deep learning.</p>
+            </div>
+            <div class="project-card">
+                <h3>Projet 3</h3>
+                <p>Analyse des données de prêts Prosper Loan.</p>
+            </div>
+            <div class="project-card">
+                <h3>Projet 4</h3>
+                <p>Modélisation de l'attrition des clients.</p>
+            </div>
+        </div>
+        <a href="https://github.com/Samadkod" target="_blank" class="button">Voir tous mes projets</a>
+    </section>
+
+    <section id="experience" class="section">
+        <h2>Experience</h2>
+        <div class="experience">
+            <h3>STMicroelectronics</h3>
+            <p>AI Apprentice - Octobre 2023 - Septembre 2024 | Le Mans, France</p>
+            <p>Développement d'une solution AI pour l'analyse de logs, réduction du temps de traitement de 70%.</p>
+        </div>
+    </section>
+
+    <section id="contact" class="section">
+        <h2>Contact</h2>
+        <p>Envoyez-moi un message pour discuter de vos besoins en data science !</p>
+        <a href="mailto:votre.email@example.com" class="button">Get In Touch</a>
+    </section>
+
+    <footer>
+        <p>&copy; 2024, Tous droits réservés</p>
+    </footer>
 </body>
 </html>
