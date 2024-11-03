@@ -7,104 +7,96 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <!-- Language Switch -->
-    <div class="language-switch">
-        <a href="index_fr.html">FR</a> | <a href="index_en.html">EN</a>
-    </div>
-
     <!-- Barre de navigation latérale -->
-    <aside role="navigation">
+    <aside>
         <nav>
             <ul>
-                <li><a href="#home" class="lang-fr">Accueil</a><a href="#home" class="lang-en" style="display: none;">Home</a></li>
-                <li><a href="#projects" class="lang-fr">Projets</a><a href="#projects" class="lang-en" style="display: none;">Projects</a></li>
-                <li><a href="#experience" class="lang-fr">Expérience</a><a href="#experience" class="lang-en" style="display: none;">Experience</a></li>
-                <li><a href="#about" class="lang-fr">À Propos</a><a href="#about" class="lang-en" style="display: none;">About Me</a></li>
-                <li><a href="#contact" class="lang-fr">Contact</a><a href="#contact" class="lang-en" style="display: none;">Contact</a></li>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#experience">Experience</a></li>
+                <li><a href="#about">About Me</a></li>
+                <li><a href="#contact">Contact</a></li>
             </ul>
         </nav>
     </aside>
 
     <!-- Section Home -->
-    <section id="home" class="section home" role="region" aria-labelledby="home-title">
+    <section id="home" class="section home">
         <div class="home-container">
             <div class="home-text">
-                <h1 id="home-title" class="lang-fr">Bienvenue, je suis Samad KODON</h1>
-                <h1 id="home-title" class="lang-en" style="display: none;">Welcome, I'm Samad KODON</h1>
-                <p class="lang-fr">Je suis un data analyst passionné par la science des données et l'analyse prédictive.</p>
-                <p class="lang-en" style="display: none;">I am a data analyst passionate about data science and predictive analytics.</p>
-                <a href="#about" class="button lang-fr">À Propos</a>
-                <a href="#about" class="button lang-en" style="display: none;">About Me</a>
+                <h1>Bienvenue, je suis Samad KODON</h1>
+                <p>Je suis un data analyst.</p>
+                <a href="#about" class="button">About Me</a>
+            </div>
+            <div class="home-photo">
+                <img src="https://avatars.githubusercontent.com/u/121679170?s=400&u=0e92c71ca881aa8e93c558c7bd982a86d1954c97&v=4" alt="Photo de Samad KODON">
             </div>
         </div>
     </section>
 
     <!-- Section Projects -->
-    <section id="projects" class="section projects" role="region" aria-labelledby="projects-title">
-        <h2 id="projects-title" class="lang-fr">Mes Derniers Projets</h2>
-        <h2 id="projects-title" class="lang-en" style="display: none;">My Latest Projects</h2>
+    <section id="projects" class="section projects">
+        <h2>My Last Projects</h2>
         <div class="project-grid">
             <!-- Projet 1 -->
             <a href="https://dezyre.gumlet.io/images/blog/churn-models/Customer_Churn_Prediction_Models_in_Machine_Learning.png?w=800&dpr=1.0" target="_blank" class="project-card">
-                <h3 class="lang-fr">Modélisation de l'Attrition des Clients</h3>
-                <h3 class="lang-en" style="display: none;">Customer Churn Modeling</h3>
+                <img src="https://dezyre.gumlet.io/images/blog/churn-models/Customer_Churn_Prediction_Models_in_Machine_Learning.png?w=800&dpr=1.0" alt="Projet 1">
+                <h3>Modélisation de l'Attrition des Clients</h3>
+                <p>Modèle d'attrition des clients pour réduire le taux de churn en se basant sur l'analyse de données clients.</p>
             </a>
             <!-- Projet 2 -->
             <a href="https://cap.img.pmdstatic.net/fit/https.3A.2F.2Fi.2Epmdstatic.2Enet.2Fcap.2F2023.2F07.2F03.2Fff1a337e-fc84-4d25-bbfa-4d8b81839ec7.2Ejpeg/1200x630/cr/wqkgcm9uc3RpayAtIEFkb2JlIFN0b2NrIC8gQ0FQSVRBTA%3D%3D/assurance-auto-lecart-se-creuse-entre-lile-de-france-et-les-regions-1491314.jpg" target="_blank" class="project-card">
-                <h3 class="lang-fr">Optimisation des Stratégies d'Assurance</h3>
-                <h3 class="lang-en" style="display: none;">Insurance Strategy Optimization</h3>
+                <img src="https://cap.img.pmdstatic.net/fit/https.3A.2F.2Fi.2Epmdstatic.2Enet.2Fcap.2F2023.2F07.2F03.2Fff1a337e-fc84-4d25-bbfa-4d8b81839ec7.2Ejpeg/1200x630/cr/wqkgcm9uc3RpayAtIEFkb2JlIFN0b2NrIC8gQ0FQSVRBTA%3D%3D/assurance-auto-lecart-se-creuse-entre-lile-de-france-et-les-regions-1491314.jpg" alt="Projet 2">
+                <h3>Optimisation des Stratégies d'Assurance</h3>
+                <p>Analyse avancée pour l'optimisation des stratégies de risque et des coûts en assurance.</p>
             </a>
             <!-- Projet 3 -->
             <a href="https://image.over-blog.com/njENmfOTRObRazbfCP8sfwn6DOA=/filters:no_upscale()/image%2F2132870%2F20230920%2Fob_ba7f44_lb190923-06.JPG" target="_blank" class="project-card">
-                <h3 class="lang-fr">Analyse de la Performance de la Nuit Bonus en Afrique</h3>
-                <h3 class="lang-en" style="display: none;">Bonus Night Performance Analysis in Africa</h3>
+                <img src="https://image.over-blog.com/njENmfOTRObRazbfCP8sfwn6DOA=/filters:no_upscale()/image%2F2132870%2F20230920%2Fob_ba7f44_lb190923-06.JPG" alt="Projet 3">
+                <h3>Analyse de la Performance de la Nuit Bonus en Afrique</h3>
+                <p>Évaluation des performances d'une stratégie de fidélisation dans le secteur télécom en Afrique.</p>
             </a>
         </div>
-        <a href="https://github.com/Samadkod" target="_blank" class="button lang-fr">Voir tous mes projets</a>
-        <a href="https://github.com/Samadkod" target="_blank" class="button lang-en" style="display: none;">See all my projects</a>
+        <a href="https://github.com/Samadkod" target="_blank" class="button">Voir tous mes projets</a>
     </section>
 
     <!-- Section Experience -->
-    <section id="experience" class="section experience" role="region" aria-labelledby="experience-title">
-        <h2 id="experience-title" class="lang-fr">Expérience</h2>
-        <h2 id="experience-title" class="lang-en" style="display: none;">Experience</h2>
+    <section id="experience" class="section experience">
+        <h2>Experience</h2>
         <div class="experience-item">
-            <h3 class="lang-fr">Data Analyst - Canal+</h3>
-            <h3 class="lang-en" style="display: none;">Data Analyst - Canal+</h3>
-            <p class="lang-fr">Janvier 2023 - Septembre 2024 | France</p>
-            <p class="lang-en" style="display: none;">January 2023 - September 2024 | France</p>
-            <p class="lang-fr">Responsable de la création et de la mise en place d'une solution AI innovante pour l'analyse de logs, ayant réduit le temps de traitement des données de 70%.</p>
-            <p class="lang-en" style="display: none;">Responsible for creating and implementing an innovative AI solution for log analysis, reducing data processing time by 70%.</p>
+            <h3>Data Analyst - Canal+</h3>
+            <p>Janvier 2023 - Septembre 2024 | France</p>
+            <p>Responsable de la création et de la mise en place d'une solution AI innovante pour l'analyse de logs, ayant réduit le temps de traitement des données de 70%. Expertise en automatisation et en traitement de données massives pour optimiser la performance des services de diffusion de contenus.</p>
         </div>
     </section>
 
     <!-- Section About Me -->
-    <section id="about" class="section about" role="region" aria-labelledby="about-title">
-        <h2 id="about-title" class="lang-fr">À Propos de Moi</h2>
-        <h2 id="about-title" class="lang-en" style="display: none;">About Me</h2>
-        <div class="about-content">
-            <p class="lang-fr">Major de promotion en Big Data et diplômé d'un master en Quantification et analyse économique.</p>
-            <p class="lang-en" style="display: none;">Top of the class in Big Data and holder of a Master's degree in Quantitative and Economic Analysis.</p>
-            <p class="lang-fr">Je suis passionné par le machine learning et l'analyse de données pour la prise de décision stratégique.</p>
-            <p class="lang-en" style="display: none;">I am passionate about machine learning and data analysis for strategic decision-making.</p>
-            <a href="CV_SamadKodon.pdf" download class="button lang-fr">Télécharger mon CV</a>
-            <a href="CV_SamadKodon.pdf" download class="button lang-en" style="display: none;">Download my CV</a>
+    <section id="about" class="section about">
+        <h2>About Me</h2>
+        <div class="about-container">
+            <div class="about-photo">
+                <img src="https://avatars.githubusercontent.com/u/121679170?s=400&u=0e92c71ca881aa8e93c558c7bd982a86d1954c97&v=4" alt="Photo de Samad Kodon">
+            </div>
+            <div class="about-content">
+                <p>Major de promotion en Big Data et diplômé d'un master en Quantification et analyse économique. Je suis passionné par le machine learning et l'analyse de données pour la prise de décision stratégique. Mon objectif est d'apporter des solutions concrètes aux défis complexes en tirant parti des données et des technologies avancées.</p>
+                <a href="CV_SamadKodon.pdf" download class="button">Télécharger mon CV</a>
+            </div>
         </div>
     </section>
 
     <!-- Section Contact -->
-    <section id="contact" class="section contact" role="region" aria-labelledby="contact-title">
-        <h2 id="contact-title" class="lang-fr">Contact</h2>
-        <h2 id="contact-title" class="lang-en" style="display: none;">Contact</h2>
-        <p class="lang-fr">Envoyez-moi un message pour discuter de vos besoins en data science !</p>
-        <p class="lang-en" style="display: none;">Send me a message to discuss your data science needs!</p>
+    <section id="contact" class="section contact">
+        <h2>Contact</h2>
+        <p>Envoyez-moi un message pour discuter de vos besoins en data science !</p>
         <div class="contact-links">
-            <a href="mailto:samadou.kodon@example.com" class="button lang-fr">Envoyer un Email</a>
-            <a href="mailto:samadou.kodon@example.com" class="button lang-en" style="display: none;">Email Me</a>
+            <a href="mailto:samadou.kodon@example.com" class="button">Email Me</a>
             <a href="https://github.com/Samadkod" target="_blank" class="button">GitHub</a>
             <a href="https://linkedin.com/in/Samadkod" target="_blank" class="button">LinkedIn</a>
         </div>
     </section>
 
     <footer>
-        <p class="lang-fr">&copy; 2024,
+        <p>&copy; 2024, Tous droits réservés</p>
+    </footer>
+</body>
+</html>
