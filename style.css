@@ -15,7 +15,7 @@ body {
 /* Sidebar Navigation */
 aside {
     position: fixed;
-    width: 220px; /* Augmenté pour un meilleur confort visuel */
+    width: 200px;
     height: 100vh;
     background-color: #333;
     padding-top: 20px;
@@ -34,19 +34,18 @@ aside nav ul li {
 aside nav ul li a {
     color: #fff;
     text-decoration: none;
-    padding: 10px 15px; /* Ajustement pour plus de confort */
+    padding: 10px 20px;
     display: block;
     font-weight: bold;
-    border-radius: 5px; /* Ajout d'un léger arrondi */
 }
 
 aside nav ul li a:hover {
-    background-color: #0073e6; /* Ajout d'un fond au survol */
+    color: #0073e6;
 }
 
 /* Main Sections */
 .section {
-    margin-left: 240px; /* Espace pour sidebar */
+    margin-left: 220px; /* Space for sidebar */
     padding: 50px 20px;
     max-width: 1200px;
     margin-bottom: 20px;
@@ -96,12 +95,6 @@ aside nav ul li a:hover {
     padding: 20px;
     border-radius: 8px;
     text-align: center;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Ajout d'une ombre légère */
-    transition: transform 0.2s; /* Effet d'animation */
-}
-
-.project-card:hover {
-    transform: translateY(-5px); /* Légère élévation au survol */
 }
 
 .project-card img {
@@ -118,6 +111,18 @@ aside nav ul li a:hover {
     flex-wrap: wrap;
 }
 
+.about-photo {
+    width: 100%;
+    max-width: 300px;
+    padding-right: 20px;
+}
+
+.about-photo img {
+    width: 100%;
+    border-radius: 50%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
 .about-content {
     flex: 1;
 }
@@ -126,7 +131,7 @@ aside nav ul li a:hover {
 .button {
     display: inline-block;
     margin-top: 20px;
-    padding: 12px 20px; /* Augmentation du padding */
+    padding: 10px 20px;
     color: #fff;
     background-color: #0073e6;
     text-decoration: none;
@@ -143,7 +148,7 @@ footer {
     padding: 10px;
     background-color: #001f3f;
     color: #fff;
-    margin-left: 240px; /* Correspond au sidebar */
+    margin-left: 220px;
 }
 
 /* Responsive Styles */
@@ -157,6 +162,7 @@ footer {
     aside nav ul {
         display: flex;
         justify-content: space-around;
+        flex-wrap: wrap; /* Ajout pour améliorer la flexibilité sur mobile */
     }
 
     .section {
@@ -171,6 +177,12 @@ footer {
 
     .home-photo img {
         width: 150px;
+    }
+
+    .about-photo {
+        width: 100%;
+        max-width: 200px;
+        margin-bottom: 20px;
     }
 
     footer {
@@ -188,6 +200,6 @@ footer {
     }
 
     .button {
-        padding: 10px 16px; /* Ajustement pour les petits écrans */
+        padding: 8px 16px;
     }
 }
