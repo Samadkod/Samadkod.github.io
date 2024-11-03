@@ -13,10 +13,6 @@ body {
 }
 
 /* Barre de navigation horizontale */
-aside {
-    display: none; /* Masquer la navigation latérale sur mobile */
-}
-
 .main-nav {
     display: flex;
     justify-content: center;
@@ -121,13 +117,6 @@ aside {
     flex-direction: column;
     align-items: center;
     text-align: center;
-}
-
-.about-photo img {
-    width: 150px;
-    border-radius: 50%;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    margin-bottom: 20px;
 }
 
 /* Footer */
