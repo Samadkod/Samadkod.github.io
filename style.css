@@ -51,15 +51,34 @@ aside nav ul li a:hover {
     margin-bottom: 20px;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
 }
 
+.section-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Couleurs des sections */
 .home, .experience, .contact {
-    background-color: #001f3f;
+    background-color: #001f3f; /* Bleu foncé */
     color: #fff;
 }
 
-.projects, .about, .skills {
+.projects {
     background-color: #fff;
+    color: #333;
+}
+
+.skills {
+    background-color: #f0f0f0; /* Gris clair */
+    color: #333;
+}
+
+.about {
+    background-color: #e3f2fd; /* Bleu doux */
     color: #333;
 }
 
