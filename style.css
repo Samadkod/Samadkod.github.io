@@ -50,84 +50,155 @@ aside nav ul li a:hover {
     max-width: 1200px;
     margin-bottom: 20px;
     border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Background Colors */
+.home, .experience, .contact {
+    background-color: #001f3f; /* Dark blue */
+    color: #fff;
+}
+
+.projects, .about {
     background-color: #fff;
+    color: #333;
 }
 
-h2 {
-    color: #0073e6;
-    margin-bottom: 20px;
+/* Home Section */
+.home-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
 }
 
-button.menu-toggle {
-    display: none; /* Hidden by default */
+.home-text {
+    flex: 1;
+    color: #fff;
 }
 
-/* Projects Section */
+.home-photo img {
+    width: 250px;
+    border-radius: 50%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Project Section */
 .project-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     gap: 20px;
 }
 
 .project-card {
-    background-color: #f0f0f0;
-    border-radius: 10px;
+    background-color: #eaeaea;
+    padding: 20px;
+    border-radius: 8px;
     text-align: center;
-    text-decoration: none;
-    transition: transform 0.2s;
 }
 
 .project-card img {
-    max-width: 100%;
-    border-radius: 10px 10px 0 0;
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 5px;
 }
 
-.project-card:hover {
-    transform: translateY(-5px); /* Slight upward movement on hover */
-}
-
-/* About Me Section */
-.about-content {
+/* About Section */
+.about-container {
     display: flex;
-    align-items: center;
+    align-items: flex-start;
+    flex-wrap: wrap;
 }
 
 .about-photo {
-    flex: 1;
-    margin-right: 20px;
+    width: 100%;
+    max-width: 300px;
+    padding-right: 20px;
 }
 
 .about-photo img {
-    width: 150px;
-    height: 150px;
-    border-radius: 50%; /* Circular photo */
-    object-fit: cover;
+    width: 100%;
+    border-radius: 50%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.about-content {
+    flex: 1;
+}
+
+/* Button */
+.button {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 10px 20px;
+    color: #fff;
+    background-color: #0073e6;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+.button:hover {
+    background-color: #005bb5;
 }
 
 /* Footer */
 footer {
     text-align: center;
     padding: 10px;
-    background-color: #333;
-    color: white;
+    background-color: #001f3f;
+    color: #fff;
+    margin-left: 220px;
 }
 
 /* Responsive Styles */
-@media (max-width: 600px) {
+@media (max-width: 768px) {
     aside {
-        display: none; /* Hide sidebar on small screens */
+        width: 100%;
+        height: auto;
+        position: relative;
     }
 
-    button.menu-toggle {
-        display: block; /* Show menu button */
+    aside nav ul {
+        display: flex;
+        justify-content: space-around;
     }
 
     .section {
-        margin-left: 0; /* Full width on small screens */
+        margin-left: 0;
+        padding: 20px;
     }
 
-    .about-content {
-        flex-direction: column; /* Stack items */
+    .home-container, .about-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .home-photo img {
+        width: 150px;
+    }
+
+    .about-photo {
+        width: 100%;
+        max-width: 200px;
+        margin-bottom: 20px;
+    }
+
+    footer {
+        margin-left: 0;
+    }
+}
+
+@media (max-width: 480px) {
+    .home-photo img {
+        width: 120px;
+    }
+
+    .project-card img {
+        height: 120px;
+    }
+
+    .button {
+        padding: 8px 16px;
     }
 }
