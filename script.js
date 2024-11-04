@@ -1,8 +1,7 @@
-document.addEventListener("DOMContentLoaded", function() {
-    const menuToggle = document.querySelector(".menu-toggle");
-    const nav = document.querySelector("aside nav");
+const menuToggle = document.querySelector('.menu-toggle');
+const aside = document.querySelector('aside');
 
-    menuToggle.addEventListener("click", function() {
-        nav.classList.toggle("visible");
-    });
+menuToggle.addEventListener('click', () => {
+    aside.classList.toggle('active');
 });
+
