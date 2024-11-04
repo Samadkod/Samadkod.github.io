@@ -70,12 +70,38 @@ aside nav ul li a:hover {
     gap: 20px;
 }
 
+.project-card {
+    background-color: #eaeaea;
+    padding: 20px;
+    border-radius: 8px;
+    text-align: center;
+    transition: transform 0.3s;
+}
+
+.project-card:hover {
+    transform: scale(1.05);
+}
+
+.project-card img {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 5px;
+}
+
 /* Compétences */
 .skills-container {
     display: flex;
     justify-content: space-around;
     flex-wrap: wrap;
     gap: 20px;
+}
+
+.skill-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
 }
 
 .skill-item img {
