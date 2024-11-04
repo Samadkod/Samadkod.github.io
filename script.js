@@ -7,12 +7,3 @@ document.addEventListener('DOMContentLoaded', function() {
     menuToggle.addEventListener('click', () => {
         aside.classList.toggle('active');
     });
-
-    // Code pour les cartes de projet
-    const projectCards = document.querySelectorAll('.project-card');
-    projectCards.forEach(card => {
-        card.addEventListener('click', () => {
-            alert('Vous avez cliqué sur un projet !');
-        });
-    });
-});
