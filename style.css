@@ -63,6 +63,25 @@ aside nav ul li a:hover {
     color: #333;
 }
 
+/* Home Section */
+.home-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.home-text {
+    flex: 1;
+    color: #fff;
+}
+
+.home-photo img {
+    width: 250px;
+    border-radius: 50%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
 /* Projets */
 .project-grid {
     display: grid;
@@ -92,22 +111,13 @@ aside nav ul li a:hover {
 /* Compétences */
 .skills-container {
     display: flex;
-    justify-content: space-around;
+    justify-content: center;
     flex-wrap: wrap;
-    gap: 20px;
+    gap: 10px;
 }
 
-.skill-item {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-}
-
-.skill-item img {
-    width: 50px;
-    height: 50px;
-    margin-bottom: 10px;
+.skills-container img {
+    margin: 5px;
 }
 
 /* Boutons */
@@ -158,7 +168,12 @@ aside nav ul li a:hover {
         padding: 20px;
     }
 
-    .skills-container, .project-grid {
+    .home-container, .skills-container, .project-grid {
         flex-direction: column;
+        align-items: center;
+    }
+
+    .home-photo img {
+        width: 150px;
     }
 }
