@@ -1,7 +1,8 @@
-const menuToggle = document.querySelector('.menu-toggle');
-const aside = document.querySelector('aside');
+document.addEventListener("DOMContentLoaded", function() {
+    const menuToggle = document.querySelector(".menu-toggle");
+    const nav = document.querySelector("aside nav");
 
-menuToggle.addEventListener('click', () => {
-    aside.classList.toggle('active');
+    menuToggle.addEventListener("click", function() {
+        nav.classList.toggle("visible");
+    });
 });
-
