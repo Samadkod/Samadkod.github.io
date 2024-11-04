@@ -21,6 +21,15 @@ aside {
     padding-top: 20px;
 }
 
+aside .menu-toggle {
+    background-color: #333;
+    color: #fff;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
 aside nav ul {
     list-style: none;
     padding: 0;
@@ -77,12 +86,6 @@ aside nav ul li a:hover {
     color: #fff;
 }
 
-.home-photo img {
-    width: 250px;
-    border-radius: 50%;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-}
-
 /* Project Section */
 .project-grid {
     display: grid;
@@ -105,24 +108,6 @@ aside nav ul li a:hover {
 }
 
 /* About Section */
-.about-container {
-    display: flex;
-    align-items: flex-start;
-    flex-wrap: wrap;
-}
-
-.about-photo {
-    width: 100%;
-    max-width: 300px;
-    padding-right: 20px;
-}
-
-.about-photo img {
-    width: 100%;
-    border-radius: 50%;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-}
-
 .about-content {
     flex: 1;
 }
@@ -148,10 +133,9 @@ footer {
     padding: 10px;
     background-color: #001f3f;
     color: #fff;
-    margin-left: 220px;
 }
 
-/* Responsive Styles */
+/* Responsive */
 @media (max-width: 768px) {
     aside {
         width: 100%;
@@ -159,47 +143,7 @@ footer {
         position: relative;
     }
 
-    aside nav ul {
-        display: flex;
-        justify-content: space-around;
-        flex-wrap: wrap; /* Ajout pour améliorer la flexibilité sur mobile */
-    }
-
     .section {
         margin-left: 0;
-        padding: 20px;
-    }
-
-    .home-container, .about-container {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .home-photo img {
-        width: 150px;
-    }
-
-    .about-photo {
-        width: 100%;
-        max-width: 200px;
-        margin-bottom: 20px;
-    }
-
-    footer {
-        margin-left: 0;
-    }
-}
-
-@media (max-width: 480px) {
-    .home-photo img {
-        width: 120px;
-    }
-
-    .project-card img {
-        height: 120px;
-    }
-
-    .button {
-        padding: 8px 16px;
     }
 }
