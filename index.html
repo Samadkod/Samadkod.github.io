@@ -91,39 +91,53 @@
     </section>
 
     <!-- Section Projets -->
-    <section id="projects" class="projects">
-        <h2>Projets</h2>
-        <div class="filter-buttons">
-            <button onclick="filterProjects('all')">Tous</button>
-            <button onclick="filterProjects('python')">Python</button>
-            <button onclick="filterProjects('sql')">SQL</button>
-            <button onclick="filterProjects('nlp')">NLP</button>
+<section id="projects" class="projects">
+    <h2>Projets</h2>
+    <div class="filter-buttons">
+        <button onclick="filterProjects('all')">Tous</button>
+        <button onclick="filterProjects('python')">Python</button>
+        <button onclick="filterProjects('sql')">SQL</button>
+        <button onclick="filterProjects('nlp')">NLP</button>
+    </div>
+    <div class="project-grid">
+        <!-- Projet 1 : Segmentation des abonnés de la Ligue 1 -->
+        <div class="project-card" data-tech="python sql">
+            <img src="https://image.over-blog.com/njENmfOTRObRazbfCP8sfwn6DOA=/filters:no_upscale()/image%2F2132870%2F20230920%2Fob_ba7f44_lb190923-06.JPG" alt="Projet Ligue 1">
+            <h3>Segmentation des abonnés de la Ligue 1</h3>
+            <p>Optimisation de l'engagement client à travers une segmentation avancée des abonnés.</p>
+            <a href="https://github.com/Samadkod/Canalplus_Experiences_Data" target="_blank">Voir le projet</a>
         </div>
-        <div class="project-grid">
-            <div class="project-card" data-tech="python sql">
-                <img src="https://image.over-blog.com/njENmfOTRObRazbfCP8sfwn6DOA=/filters:no_upscale()/image%2F2132870%2F20230920%2Fob_ba7f44_lb190923-06.JPG" alt="Projet Ligue 1">
-                <h3>Segmentation des abonnés de la Ligue 1</h3>
-                <p>Optimisation de l'engagement client à travers une segmentation avancée des abonnés.</p>
-                <a href="https://github.com/Samadkod/Canalplus_Experiences_Data" target="_blank">Voir le projet</a>
-            </div>
-            <div class="project-card" data-tech="python nlp">
-                <img src="https://e-tailize.com/wp-content/uploads/2023/10/top-marketplace-for-furniture-1024x683.jpg" alt="Projet Catégorisation">
-                <h3>Catégorisation de produits</h3>
-                <p>Catégorisation automatique des produits à partir de descriptions textuelles.</p>
-                <a href="https://github.com/Samadkod/Cat-gorisation-de-produits" target="_blank">Voir le projet</a>
-            </div>
-            <div class="project-card" data-tech="python">
-                <img src="https://dezyre.gumlet.io/images/blog/churn-models/Customer_Churn_Prediction_Models_in_Machine_Learning.png?w=800&dpr=1.0" alt="Projet Attrition">
-                <h3>Modélisation de l'Attrition</h3>
-                <p>Prédiction des départs clients pour améliorer la rétention.</p>
-                <a href="https://github.com/Samadkod/Canalplus_Experiences_Data" target="_blank">Voir le projet</a>
-            </div>
+
+        <!-- Projet 2 : Catégorisation de produits -->
+        <div class="project-card" data-tech="python nlp">
+            <img src="https://e-tailize.com/wp-content/uploads/2023/10/top-marketplace-for-furniture-1024x683.jpg" alt="Projet Catégorisation">
+            <h3>Catégorisation de produits</h3>
+            <p>Catégorisation automatique des produits à partir de descriptions textuelles.</p>
+            <a href="https://github.com/Samadkod/Cat-gorisation-de-produits" target="_blank">Voir le projet</a>
         </div>
-        <!-- Bouton "Voir tous mes projets" bien aligné -->
-        <div class="centered-button">
-            <a href="https://github.com/Samadkod?tab=repositories" target="_blank" class="button projects-button">Voir tous mes projets</a>
+
+        <!-- Projet 3 : Modélisation de l'Attrition -->
+        <div class="project-card" data-tech="python">
+            <img src="https://dezyre.gumlet.io/images/blog/churn-models/Customer_Churn_Prediction_Models_in_Machine_Learning.png?w=800&dpr=1.0" alt="Projet Attrition">
+            <h3>Modélisation de l'Attrition</h3>
+            <p>Prédiction des départs clients pour améliorer la rétention.</p>
+            <a href="https://github.com/Samadkod/Canalplus_Experiences_Data" target="_blank">Voir le projet</a>
         </div>
-    </section>
+
+        <!-- Projet 4 : Analyse Comportementale des Profils d'Assurés -->
+        <div class="project-card" data-tech="python machine-learning">
+            <img src="https://cap.img.pmdstatic.net/fit/https.3A.2F.2Fi.2Epmdstatic.2Enet.2Fcap.2F2023.2F07.2F03.2Fff1a337e-fc84-4d25-bbfa-4d8b81839ec7.2Ejpeg/1200x630/cr/wqkgcm9uc3RpayAtIEFkb2JlIFN0b2NrIC8gQ0FQSVRBTA%3D%3D/assurance-auto-lecart-se-creuse-entre-lile-de-france-et-les-regions-1491314.jpg" alt="Analyse Comportementale des Profils d'Assurés">
+            <h3>Analyse Comportementale des Profils d'Assurés</h3>
+            <p>Optimisation des stratégies de tarification grâce à l'analyse des comportements des assurés.</p>
+            <a href="https://github.com/Samadkod/3.Projet-data_Assurance-auto" target="_blank">Voir le projet</a>
+        </div>
+    </div>
+
+    <!-- Bouton "Voir tous mes projets" bien aligné -->
+    <div class="centered-button">
+        <a href="https://github.com/Samadkod?tab=repositories" target="_blank" class="button projects-button">Voir tous mes projets</a>
+    </div>
+</section>
 
     <!-- Section Expérience -->
     <section id="experience" class="experience">
