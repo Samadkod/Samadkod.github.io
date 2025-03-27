@@ -261,88 +261,49 @@ h2 {
 }
 
 /* Contact */
-.contact-links {
+.contact-info {
     display: flex;
-    justify-content: center;
-    gap: 20px;
-}
-
-.contact-links a {
-    color: #0073e6;
-    text-decoration: none;
-    font-size: 1.2em;
-    transition: color 0.3s;
-}
-
-.contact-links a:hover {
-    color: #005bb5;
-}
-
-/* Footer */
-footer {
-    text-align: center;
-    padding: 20px;
-    background: #001f3f;
-    color: #fff;
+    justify-content: space-between;
+    align-items: center;
     margin-top: 40px;
+    padding: 0 20px; 
 }
 
-/* Bouton Télécharger CV */
-.cv-button {
-    display: inline-block;
-    margin-top: 20px;
-    padding: 10px 20px;
+.contact-item {
+    text-align: center;
     background-color: #0073e6;
     color: #fff;
-    text-decoration: none;
-    border-radius: 5px;
-    transition: background-color 0.3s;
+    padding: 15px 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    width: 120px;
+    transition: transform 0.3s, background-color 0.3s;
 }
 
-.cv-button:hover {
+.contact-item:first-child {
+    align-self: flex-start;
+}
+
+.contact-item:nth-child(2) {
+    align-self: center;
+}
+
+.contact-item:last-child {
+    align-self: flex-end;
+}
+
+.contact-item:hover {
+    transform: scale(1.05);
     background-color: #005bb5;
 }
 
-/* Mode sombre */
-body.dark-mode {
-    background-color: #121212;
-    color: #ffffff;
+.contact-item h3 {
+    font-size: 2.5em;
+    margin-bottom: 5px;
 }
 
-/* Styles pour les boutons images */
-.button img {
-    width: 150px;
-    height: auto;
-    transition: transform 0.3s;
-}
-
-.button img:hover {
-    transform: scale(1.1);
-}
-
-/* Responsive Design */
-@media (max-width: 768px) {
-    .home {
-        flex-direction: column;
-        text-align: center;
-    }
-
-    .home-photo img {
-        width: 150px;
-        margin-top: 20px;
-    }
-
-    .skills-grid,
-    .project-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .nav-links {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .nav-links li {
-        margin: 10px 0;
-    }
+.contact-item p {
+    font-size: 1em;
+    margin: 0;
+    color: #fff;
 }
