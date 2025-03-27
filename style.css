@@ -309,88 +309,15 @@ body.dark-mode {
     color: #ffffff;
 }
 
-body.dark-mode nav {
-    background-color: #1f1f1f;
+/* Styles pour les boutons images */
+.button img {
+    width: 150px;
+    height: auto;
+    transition: transform 0.3s;
 }
 
-body.dark-mode section {
-    background-color: #1f1f1f;
-    color: #ffffff;
-}
-
-body.dark-mode h2 {
-    color: #ffffff;
-}
-
-body.dark-mode .home-text h1,
-body.dark-mode .home-text h2,
-body.dark-mode .home-text p {
-    color: #ffffff;
-}
-
-body.dark-mode .skill-category {
-    background-color: #2d2d2d;
-    color: #ffffff;
-}
-
-body.dark-mode .skill-category h3 {
-    color: #ffffff;
-}
-
-body.dark-mode .project-card {
-    background-color: #2d2d2d;
-    color: #ffffff;
-}
-
-body.dark-mode .project-card h3 {
-    color: #ffffff;
-}
-
-body.dark-mode .project-card p {
-    color: #cccccc;
-}
-
-body.dark-mode .project-card a {
-    color: #0073e6;
-}
-
-body.dark-mode .experience-item {
-    background-color: #2d2d2d;
-    color: #ffffff;
-}
-
-body.dark-mode .experience-item h3 {
-    color: #ffffff;
-}
-
-body.dark-mode .experience-item p {
-    color: #cccccc;
-}
-
-body.dark-mode .experience-item ul {
-    color: #cccccc;
-}
-
-body.dark-mode .contact-links a {
-    color: #0073e6;
-}
-
-body.dark-mode .cv-button {
-    background-color: #0073e6;
-    color: #ffffff;
-}
-
-body.dark-mode .cv-button:hover {
-    background-color: #005bb5;
-}
-
-body.dark-mode .projects-button {
-    background-color: #28a745;
-    color: #ffffff;
-}
-
-body.dark-mode .projects-button:hover {
-    background-color: #218838;
+.button img:hover {
+    transform: scale(1.1);
 }
 
 /* Responsive Design */
@@ -405,10 +332,7 @@ body.dark-mode .projects-button:hover {
         margin-top: 20px;
     }
 
-    .skills-grid {
-        grid-template-columns: 1fr;
-    }
-
+    .skills-grid,
     .project-grid {
         grid-template-columns: 1fr;
     }
@@ -421,15 +345,4 @@ body.dark-mode .projects-button:hover {
     .nav-links li {
         margin: 10px 0;
     }
-}
-
-/* Styles pour les boutons images */
-.button img {
-    width: 150px; /* Ajustez la taille selon vos besoins */
-    height: auto;
-    transition: transform 0.3s;
-}
-
-.button img:hover {
-    transform: scale(1.1);
 }
