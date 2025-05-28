@@ -465,3 +465,7 @@ body.dark-mode .projects-button:hover {
     background: #005bb5;
 }
 
+.project-1 { border-left: 6px solid #0073e6; }
+.project-2 { border-left: 6px solid #ff8c00; }
+.project-3 { border-left: 6px solid #28a745; }
+.project-4 { border-left: 6px solid #6f42c1; }
