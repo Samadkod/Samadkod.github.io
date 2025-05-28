@@ -83,3 +83,36 @@ function revealSections() {
 // Appel initial pour afficher les sections déjà dans la vue
 revealSections();
 
+document.addEventListener("DOMContentLoaded", function () {
+    const ctx = document.getElementById('ligue1Chart');
+    if (ctx) {
+        new Chart(ctx, {
+            type: 'bar',
+            data: {
+                labels: ['Fans occasionnels', 'Fans réguliers', 'Ultra fans'],
+                datasets: [{
+                    label: 'Nombre d’abonnés',
+                    data: [120, 300, 180],
+                    backgroundColor: ['#0073e6', '#28a745', '#ffc107'],
+                }]
+            },
+            options: {
+                responsive: true,
+                plugins: {
+                    legend: { display: false },
+                    title: {
+                        display: true,
+                        text: 'Répartition des abonnés Ligue 1'
+                    }
+                },
+                scales: {
+                    y: {
+                        beginAtZero: true
+                    }
+                }
+            }
+        });
+    }
+});
+
+
