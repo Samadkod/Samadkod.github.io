@@ -469,3 +469,13 @@ body.dark-mode .projects-button:hover {
 .project-2 { border-left: 6px solid #ff8c00; }
 .project-3 { border-left: 6px solid #28a745; }
 .project-4 { border-left: 6px solid #6f42c1; }
+
+
+.project-card canvas {
+    max-width: 100%;
+    width: 300px;
+    height: auto;
+    display: block;
+    margin: 20px auto 0 auto;
+}
+
