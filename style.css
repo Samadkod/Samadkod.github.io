@@ -479,3 +479,32 @@ body.dark-mode .projects-button:hover {
     margin: 20px auto 0 auto;
 }
 
+.burger {
+    display: none;
+    cursor: pointer;
+    font-size: 1.8em;
+    color: #fff;
+}
+
+@media (max-width: 768px) {
+    .burger {
+        display: block;
+    }
+
+    .nav-links {
+        flex-direction: column;
+        align-items: flex-start;
+        background: #001f3f;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        width: 100%;
+        display: none;
+        padding: 10px 20px;
+    }
+
+    .nav-links.open {
+        display: flex;
+    }
+}
+
