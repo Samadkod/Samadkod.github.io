@@ -84,35 +84,66 @@ function revealSections() {
 revealSections();
 
 document.addEventListener("DOMContentLoaded", function () {
-    const ctx = document.getElementById('ligue1Chart');
-    if (ctx) {
-        new Chart(ctx, {
+    const charts = [
+        {
+            id: 'ligue1Chart',
             type: 'bar',
-            data: {
-                labels: ['Fans occasionnels', 'Fans réguliers', 'Ultra fans'],
-                datasets: [{
-                    label: 'Nombre d’abonnés',
-                    data: [120, 300, 180],
-                    backgroundColor: ['#0073e6', '#28a745', '#ffc107'],
-                }]
-            },
-            options: {
-                responsive: true,
-                plugins: {
-                    legend: { display: false },
-                    title: {
-                        display: true,
-                        text: 'Répartition des abonnés Ligue 1'
-                    }
-                },
-                scales: {
-                    y: {
-                        beginAtZero: true
-                    }
-                }
-            }
-        });
-    }
-});
+            labels: ['Occasionnels', 'Réguliers', 'Ultra fans'],
+            data: [120, 300, 180],
+            color: '#0073e6',
+            title: 'Segmentation des abonnés Ligue 1'
+        },
+        {
+            id: 'categorieChart',
+            type: 'doughnut',
+            labels: ['Électronique', 'Maison', 'Mode', 'Autres'],
+            data: [80, 150, 100, 70],
+            color: '#ff8c00',
+            title: 'Répartition des catégories de produits'
+        },
+        {
+            id: 'attritionChart',
+            type: 'line',
+            labels: ['Jan', 'Fév', 'Mar', 'Avr', 'Mai'],
+            data: [200, 180, 160, 140, 130],
+            color: '#28a745',
+            title: 'Évolution de l’attrition clients'
+        },
+        {
+            id: 'assuranceChart',
+            type: 'bar',
+            labels: ['Profil jeune', 'Famille', 'Senior'],
+            data: [100, 200, 80],
+            color: '#6f42c1',
+            title: 'Profils d’assurés'
+        }
+    ];
 
+    charts.forEach(cfg => {
+        const ctx = document.getElementById(cfg.id);
+        if (ctx) {
+            new Chart(ctx, {
+                type: cfg.type,
+                data: {
+                    labels: cfg.labels,
+                    datasets: [{
+                        label: cfg.title,
+                        data: cfg.data,
+                        backgroundColor: cfg.color
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    plugins: {
+                        legend: { display: false },
+                        title: { display: true, text: cfg.title }
+                    },
+                    scales: cfg.type === 'bar' || cfg.type === 'line' ? {
+                        y: { beginAtZero: true }
+                    } : {}
+                }
+            });
+        }
+    });
+});
 
