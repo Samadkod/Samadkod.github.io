@@ -93,15 +93,15 @@ document.addEventListener("DOMContentLoaded", function () {
             color: '#0073e6',
             title: 'Segmentation des abonnés Ligue 1'
         },
-        {
-            id: 'categorieChart',
-            type: 'doughnut',
-            labels: ['Électronique', 'Maison', 'Mode', 'Autres'],
-            data: [80, 150, 100, 70],
-            color: '#ff8c00',
-            title: 'Répartition des catégories de produits'
-        },
-        {
+       {
+    id: 'categorieChart',
+    type: 'doughnut',
+    labels: ['Électronique', 'Maison', 'Mode', 'Autres'],
+    data: [80, 150, 100, 70],
+    color: ['#ff6384', '#36a2eb', '#ffcd56', '#4bc0c0'],
+    title: 'Répartition des catégories de produits'
+},
+{
             id: 'attritionChart',
             type: 'line',
             labels: ['Jan', 'Fév', 'Mar', 'Avr', 'Mai'],
