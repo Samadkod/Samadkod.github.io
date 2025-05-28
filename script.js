@@ -158,3 +158,29 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 });
 
+document.addEventListener("DOMContentLoaded", () => {
+    const form = document.querySelector(".contact-form");
+    const confirmation = document.getElementById("form-confirmation");
+
+    if (form && confirmation) {
+        form.addEventListener("submit", function (e) {
+            e.preventDefault();
+            const formData = new FormData(form);
+            fetch(form.action, {
+                method: "POST",
+                body: formData,
+                headers: {
+                    'Accept': 'application/json'
+                }
+            }).then(response => {
+                if (response.ok) {
+                    form.reset();
+                    confirmation.style.display = "block";
+                } else {
+                    alert("Une erreur s'est produite. Veuillez réessayer.");
+                }
+            });
+        });
+    }
+});
+
