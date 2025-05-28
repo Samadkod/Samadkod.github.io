@@ -129,7 +129,7 @@ document.addEventListener("DOMContentLoaded", function () {
                     datasets: [{
                         label: cfg.title,
                         data: cfg.data,
-                        backgroundColor: cfg.color
+                       backgroundColor: Array.isArray(cfg.color) ? cfg.color : [cfg.color]
                     }]
                 },
                 options: {
