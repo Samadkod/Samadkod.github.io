@@ -503,6 +503,15 @@ body.dark-mode .projects-button:hover {
         padding: 10px 20px;
     }
 
+    .confirmation-message {
+    display: none;
+    text-align: center;
+    color: green;
+    font-weight: bold;
+    margin-top: 15px;
+}
+
+
     .nav-links.open {
         display: flex;
     }
