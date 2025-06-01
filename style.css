@@ -573,3 +573,29 @@ body.dark-mode .projects-button:hover {
 .why-card p {
     color: #555;
 }
+
+
+.animated-title {
+    font-size: 2.5em;
+    font-weight: bold;
+    animation: fadeSlideIn 2s ease-in-out;
+    color: #001f3f;
+}
+
+@keyframes fadeSlideIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.home-buttons {
+    margin-top: 20px;
+    display: flex;
+    gap: 15px;
+}
+
