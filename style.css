@@ -646,3 +646,7 @@ body.dark-mode .projects-button:hover {
 .streamlit-apps .app-card a.button:hover {
     background-color: #005bb5;
 }
+.streamlit-apps .app-card img {
+    margin-bottom: 10px;
+    max-width: 100px;
+}
