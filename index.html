@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Samadou Kodon — Data Analyst</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Outfit:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#0d0f14; --bg-soft:#141821; --bg-card:#161b26; --line:#252c3a;
+  --text:#e9edf4; --text-soft:#9aa6bd; --text-dim:#6b7689;
+  --accent:#5b9dff; --accent-2:#7cf0c8; --accent-warm:#ffb86b;
+  --shadow:0 20px 60px -20px rgba(0,0,0,.6);
+}
+[data-theme="light"]{
+  --bg:#f7f8fb; --bg-soft:#ffffff; --bg-card:#ffffff; --line:#e4e8f0;
+  --text:#141821; --text-soft:#4a5568; --text-dim:#8a94a6;
+  --accent:#2d6cdf; --accent-2:#0fae84; --accent-warm:#e08a2b;
+  --shadow:0 20px 50px -24px rgba(20,30,60,.22);
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  background:var(--bg);color:var(--text);
+  font-family:'Outfit',sans-serif;line-height:1.6;
+  transition:background .4s ease,color .4s ease;
+  overflow-x:hidden;
+}
+/* atmospheric background */
+body::before{
+  content:"";position:fixed;inset:0;z-index:-2;
+  background:
+    radial-gradient(800px 500px at 80% -5%, color-mix(in srgb,var(--accent) 14%, transparent), transparent 70%),
+    radial-gradient(700px 500px at 0% 30%, color-mix(in srgb,var(--accent-2) 10%, transparent), transparent 70%);
+  transition:opacity .4s;
+}
+body::after{
+  content:"";position:fixed;inset:0;z-index:-1;opacity:.025;pointer-events:none;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+.wrap{max-width:1080px;margin:0 auto;padding:0 24px}
+a{color:inherit;text-decoration:none}
+
+/* NAV */
+nav{
+  position:fixed;top:0;left:0;right:0;z-index:100;
+  backdrop-filter:blur(14px);
+  background:color-mix(in srgb,var(--bg) 80%, transparent);
+  border-bottom:1px solid var(--line);
+}
+.nav-in{display:flex;align-items:center;justify-content:space-between;height:64px;max-width:1080px;margin:0 auto;padding:0 24px}
+.logo{font-family:'Fraunces',serif;font-weight:600;font-size:1.25rem;letter-spacing:-.02em}
+.logo span{color:var(--accent)}
+.nav-links{display:flex;gap:28px;align-items:center}
+.nav-links a{font-size:.9rem;color:var(--text-soft);transition:color .2s;font-weight:500}
+.nav-links a:hover{color:var(--text)}
+.controls{display:flex;gap:8px;align-items:center}
+.btn-icon{
+  background:var(--bg-card);border:1px solid var(--line);color:var(--text-soft);
+  width:38px;height:34px;border-radius:9px;cursor:pointer;font-size:.8rem;font-weight:600;
+  display:flex;align-items:center;justify-content:center;transition:all .2s;font-family:'Outfit'
+}
+.btn-icon:hover{color:var(--text);border-color:var(--accent)}
+.menu-toggle{display:none}
+
+/* HERO */
+header{padding:140px 0 90px;position:relative}
+.tag{
+  display:inline-flex;align-items:center;gap:8px;
+  background:color-mix(in srgb,var(--accent-2) 14%, transparent);
+  color:var(--accent-2);border:1px solid color-mix(in srgb,var(--accent-2) 30%, transparent);
+  padding:6px 14px;border-radius:100px;font-size:.82rem;font-weight:600;margin-bottom:28px;
+}
+.dot{width:7px;height:7px;border-radius:50%;background:var(--accent-2);animation:pulse 2s infinite}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:.3}}
+h1{
+  font-family:'Fraunces',serif;font-weight:600;
+  font-size:clamp(2.4rem,6vw,4.2rem);line-height:1.04;letter-spacing:-.03em;margin-bottom:24px;
+}
+h1 .grad{
+  background:linear-gradient(120deg,var(--accent),var(--accent-2));
+  -webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;
+}
+.lead{font-size:clamp(1.05rem,2vw,1.3rem);color:var(--text-soft);max-width:620px;margin-bottom:18px;font-weight:300}
+.hero-meta{display:flex;flex-wrap:wrap;gap:10px;margin:32px 0 36px}
+.chip{
+  background:var(--bg-card);border:1px solid var(--line);
+  padding:8px 16px;border-radius:10px;font-size:.85rem;color:var(--text-soft);font-weight:500;
+  display:flex;align-items:center;gap:7px;
+}
+.chip b{color:var(--text);font-weight:600}
+.cta-row{display:flex;gap:14px;flex-wrap:wrap}
+.btn{
+  padding:13px 26px;border-radius:11px;font-weight:600;font-size:.95rem;cursor:pointer;
+  transition:all .25s;border:1px solid transparent;font-family:'Outfit';display:inline-flex;align-items:center;gap:9px
+}
+.btn-primary{background:var(--accent);color:#fff;box-shadow:0 8px 24px -8px var(--accent)}
+.btn-primary:hover{transform:translateY(-2px);box-shadow:0 14px 30px -10px var(--accent)}
+.btn-ghost{background:transparent;border-color:var(--line);color:var(--text)}
+.btn-ghost:hover{border-color:var(--accent);color:var(--accent)}
+
+/* SECTIONS */
+section{padding:70px 0;position:relative}
+.sec-head{margin-bottom:44px}
+.sec-num{font-family:'JetBrains Mono',monospace;font-size:.8rem;color:var(--accent);letter-spacing:.1em;margin-bottom:10px}
+.sec-title{font-family:'Fraunces',serif;font-weight:600;font-size:clamp(1.7rem,3.5vw,2.5rem);letter-spacing:-.02em}
+.sec-sub{color:var(--text-soft);margin-top:10px;max-width:600px;font-weight:300}
+
+/* ABOUT */
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:44px;align-items:start}
+.about-text p{color:var(--text-soft);margin-bottom:16px;font-weight:300;font-size:1.05rem}
+.about-text strong{color:var(--text);font-weight:600}
+.about-side{display:flex;flex-direction:column;gap:14px}
+.fact{background:var(--bg-card);border:1px solid var(--line);border-radius:14px;padding:20px 22px;transition:transform .25s,border-color .25s}
+.fact:hover{transform:translateX(6px);border-color:var(--accent)}
+.fact .big{font-family:'Fraunces',serif;font-size:1.9rem;font-weight:600;color:var(--accent);line-height:1}
+.fact .lbl{color:var(--text-soft);font-size:.9rem;margin-top:6px}
+
+/* SKILLS */
+.skill-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}
+.skill-card{background:var(--bg-card);border:1px solid var(--line);border-radius:16px;padding:24px;transition:transform .25s,border-color .25s}
+.skill-card:hover{transform:translateY(-4px);border-color:var(--accent)}
+.skill-card h3{font-size:1.05rem;margin-bottom:14px;display:flex;align-items:center;gap:10px;font-weight:600}
+.skill-card .ic{font-size:1.2rem}
+.tags{display:flex;flex-wrap:wrap;gap:8px}
+.t{font-family:'JetBrains Mono',monospace;font-size:.78rem;background:var(--bg-soft);border:1px solid var(--line);color:var(--text-soft);padding:5px 11px;border-radius:7px}
+
+/* EXPERIENCE */
+.timeline{position:relative;padding-left:30px}
+.timeline::before{content:"";position:absolute;left:7px;top:8px;bottom:8px;width:2px;background:linear-gradient(var(--accent),transparent)}
+.exp{position:relative;margin-bottom:38px}
+.exp::before{content:"";position:absolute;left:-30px;top:6px;width:16px;height:16px;border-radius:50%;background:var(--bg);border:3px solid var(--accent)}
+.exp-top{display:flex;justify-content:space-between;flex-wrap:wrap;gap:6px;margin-bottom:4px}
+.exp-role{font-weight:600;font-size:1.12rem}
+.exp-date{font-family:'JetBrains Mono',monospace;font-size:.82rem;color:var(--accent);white-space:nowrap}
+.exp-co{color:var(--accent-2);font-weight:500;margin-bottom:12px;font-size:.95rem}
+.exp ul{list-style:none;display:flex;flex-direction:column;gap:7px}
+.exp li{color:var(--text-soft);font-size:.95rem;padding-left:20px;position:relative;font-weight:300}
+.exp li::before{content:"▸";position:absolute;left:0;color:var(--accent)}
+
+/* PROJECTS */
+.proj-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:20px}
+.proj{background:var(--bg-card);border:1px solid var(--line);border-radius:16px;padding:24px;transition:all .25s;display:flex;flex-direction:column;gap:12px}
+.proj:hover{transform:translateY(-5px);border-color:var(--accent);box-shadow:var(--shadow)}
+.proj-ic{font-size:1.6rem}
+.proj h3{font-size:1.1rem;font-weight:600}
+.proj p{color:var(--text-soft);font-size:.92rem;font-weight:300;flex:1}
+.proj-foot{display:flex;justify-content:space-between;align-items:center;margin-top:6px}
+.proj-stack{font-family:'JetBrains Mono',monospace;font-size:.74rem;color:var(--text-dim)}
+.proj-link{color:var(--accent);font-size:.85rem;font-weight:600;display:inline-flex;align-items:center;gap:5px;transition:gap .2s}
+.proj-link:hover{gap:9px}
+
+/* CONTACT */
+.contact-box{background:var(--bg-card);border:1px solid var(--line);border-radius:20px;padding:48px;text-align:center}
+.contact-box h2{font-family:'Fraunces',serif;font-weight:600;font-size:clamp(1.6rem,3vw,2.3rem);margin-bottom:14px;letter-spacing:-.02em}
+.contact-box p{color:var(--text-soft);max-width:480px;margin:0 auto 28px;font-weight:300}
+.contact-links{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
+
+footer{border-top:1px solid var(--line);padding:30px 0;text-align:center;color:var(--text-dim);font-size:.85rem}
+
+.reveal{opacity:0;transform:translateY(28px);transition:opacity .7s cubic-bezier(.2,.7,.2,1),transform .7s cubic-bezier(.2,.7,.2,1)}
+.reveal.in{opacity:1;transform:none}
+
+@media(max-width:780px){
+  .nav-links{display:none}
+  .menu-toggle{display:flex}
+  .about-grid{grid-template-columns:1fr;gap:28px}
+  .skill-grid,.proj-grid{grid-template-columns:1fr}
+  header{padding:120px 0 60px}
+}
+[lang-hide]{display:none!important}
+</style>
+</head>
+<body data-theme="dark">
+
+<nav>
+  <div class="nav-in">
+    <a href="#home" class="logo">Samadou<span>.</span></a>
+    <div class="nav-links">
+      <a href="#about" data-fr="À propos" data-en="About">À propos</a>
+      <a href="#skills" data-fr="Compétences" data-en="Skills">Compétences</a>
+      <a href="#experience" data-fr="Expérience" data-en="Experience">Expérience</a>
+      <a href="#projects" data-fr="Projets" data-en="Projects">Projets</a>
+      <a href="#contact" data-fr="Contact" data-en="Contact">Contact</a>
+    </div>
+    <div class="controls">
+      <button class="btn-icon" id="lang" title="Langue">EN</button>
+      <button class="btn-icon" id="theme" title="Thème">☀</button>
+    </div>
+  </div>
+</nav>
+
+<header id="home">
+  <div class="wrap">
+    <div class="tag reveal"><span class="dot"></span><span data-fr="Disponible immédiatement — CDI / CDD / Freelance" data-en="Available now — Permanent / Contract / Freelance">Disponible immédiatement — CDI / CDD / Freelance</span></div>
+    <h1 class="reveal">
+      <span data-fr="Je transforme les données en" data-en="I turn data into">Je transforme les données en</span>
+      <span class="grad" data-fr="décisions concrètes." data-en="real decisions.">décisions concrètes.</span>
+    </h1>
+    <p class="lead reveal" data-fr="Data Analyst · 3 ans d'expérience en analyse, pilotage de KPI et reporting décisionnel. Une expérience média internationale (Canal+) et tech (Gozem), boostée par l'IA au quotidien." data-en="Data Analyst · 3 years in analytics, KPI steering and decision reporting. International media (Canal+) and tech (Gozem) experience, powered by AI every day.">Data Analyst · 3 ans d'expérience en analyse, pilotage de KPI et reporting décisionnel. Une expérience média internationale (Canal+) et tech (Gozem), boostée par l'IA au quotidien.</p>
+    <div class="hero-meta reveal">
+      <span class="chip">📍 <b>Strasbourg</b></span>
+      <span class="chip" data-fr="🌍 Mobilité Paris" data-en="🌍 Open to Paris">🌍 Mobilité Paris</span>
+      <span class="chip">🎓 <b>Master Big Data</b> <span data-fr="(major)" data-en="(top of class)">(major)</span></span>
+    </div>
+    <div class="cta-row reveal">
+      <a href="#projects" class="btn btn-primary" data-fr="Voir mes projets →" data-en="See my work →">Voir mes projets →</a>
+      <a href="#contact" class="btn btn-ghost" data-fr="Me contacter" data-en="Get in touch">Me contacter</a>
+    </div>
+  </div>
+</header>
+
+<section id="about">
+  <div class="wrap">
+    <div class="about-grid">
+      <div class="about-text reveal">
+        <div class="sec-num">01 — <span data-fr="À propos" data-en="About">À propos</span></div>
+        <h2 class="sec-title" style="margin-bottom:24px" data-fr="Le lien entre la data et le métier." data-en="The bridge between data and business.">Le lien entre la data et le métier.</h2>
+        <p data-fr="Diplômé en <strong>Big Data &amp; Data Science</strong> (major de promotion) et en <strong>économie quantitative</strong>, j'aide les équipes à mieux comprendre leurs données pour décider plus vite et plus juste." data-en="Graduate in <strong>Big Data &amp; Data Science</strong> (top of class) and <strong>quantitative economics</strong>, I help teams understand their data to decide faster and better.">Diplômé en <strong>Big Data &amp; Data Science</strong> (major de promotion) et en <strong>économie quantitative</strong>, j'aide les équipes à mieux comprendre leurs données pour décider plus vite et plus juste.</p>
+        <p data-fr="Mon parcours mêle un grand groupe média (<strong>Canal+</strong>, marchés internationaux) et une startup tech africaine (<strong>Gozem</strong>) : KPI, segmentation, churn, automatisation de reporting." data-en="My path blends a major media group (<strong>Canal+</strong>, international markets) and an African tech startup (<strong>Gozem</strong>): KPIs, segmentation, churn, reporting automation.">Mon parcours mêle un grand groupe média (<strong>Canal+</strong>, marchés internationaux) et une startup tech africaine (<strong>Gozem</strong>) : KPI, segmentation, churn, automatisation de reporting.</p>
+        <p data-fr="Mon approche : des outils <strong>simples, visuels et concrets</strong> — qui parlent à tous, pas seulement aux data scientists. Et j'utilise l'<strong>IA</strong> pour gagner en efficacité au quotidien." data-en="My approach: <strong>simple, visual, concrete</strong> tools — for everyone, not just data scientists. And I use <strong>AI</strong> daily to work more efficiently.">Mon approche : des outils <strong>simples, visuels et concrets</strong> — qui parlent à tous, pas seulement aux data scientists. Et j'utilise l'<strong>IA</strong> pour gagner en efficacité au quotidien.</p>
+      </div>
+      <div class="about-side reveal">
+        <div class="fact"><div class="big">3 <span style="font-size:1rem;color:var(--text-soft)" data-fr="ans" data-en="yrs">ans</span></div><div class="lbl" data-fr="d'expérience data" data-en="data experience">d'expérience data</div></div>
+        <div class="fact"><div class="big">24</div><div class="lbl" data-fr="pays analysés chez Canal+ (Afrique)" data-en="countries analysed at Canal+ (Africa)">pays analysés chez Canal+ (Afrique)</div></div>
+        <div class="fact"><div class="big">50K+</div><div class="lbl" data-fr="utilisateurs analysés chez Gozem" data-en="users analysed at Gozem">utilisateurs analysés chez Gozem</div></div>
+        <div class="fact"><div class="big">×2</div><div class="lbl" data-fr="reporting plus rapide via automatisation" data-en="faster reporting through automation">reporting plus rapide via automatisation</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="skills">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="sec-num">02 — <span data-fr="Compétences" data-en="Skills">Compétences</span></div>
+      <h2 class="sec-title" data-fr="Ma boîte à outils" data-en="My toolbox">Ma boîte à outils</h2>
+    </div>
+    <div class="skill-grid">
+      <div class="skill-card reveal"><h3><span class="ic">🐍</span><span data-fr="Langages &amp; Analyse" data-en="Languages &amp; Analysis">Langages &amp; Analyse</span></h3><div class="tags"><span class="t">Python</span><span class="t">SQL</span><span class="t">R</span><span class="t">SAS</span><span class="t">Pandas</span><span class="t">Scikit-learn</span></div></div>
+      <div class="skill-card reveal"><h3><span class="ic">📊</span><span data-fr="Visualisation" data-en="Visualisation">Visualisation</span></h3><div class="tags"><span class="t">Power BI</span><span class="t">Streamlit</span><span class="t">Plotly</span><span class="t">Excel</span></div></div>
+      <div class="skill-card reveal"><h3><span class="ic">☁️</span><span data-fr="Data &amp; Cloud" data-en="Data &amp; Cloud">Data &amp; Cloud</span></h3><div class="tags"><span class="t">Dataiku</span><span class="t">Snowflake</span><span class="t">Git</span><span class="t">ETL</span></div></div>
+      <div class="skill-card reveal"><h3><span class="ic">🤖</span><span data-fr="IA &amp; Automatisation" data-en="AI &amp; Automation">IA &amp; Automatisation</span></h3><div class="tags"><span class="t">Agents IA</span><span class="t" data-fr="Génération de code" data-en="Code generation">Génération de code</span><span class="t">Prompting</span><span class="t" data-fr="Workflows" data-en="Workflows">Workflows</span></div></div>
+    </div>
+  </div>
+</section>
+
+<section id="experience">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="sec-num">03 — <span data-fr="Expérience" data-en="Experience">Expérience</span></div>
+      <h2 class="sec-title" data-fr="Mon parcours" data-en="My journey">Mon parcours</h2>
+    </div>
+    <div class="timeline">
+      <div class="exp reveal">
+        <div class="exp-top"><span class="exp-role" data-fr="Data Analyst — Migration SI (intérim)" data-en="Data Analyst — IS Migration (contract)">Data Analyst — Migration SI (intérim)</span><span class="exp-date">Sept. 2025 — Déc. 2026</span></div>
+        <div class="exp-co">OCEA Smart Building · Strasbourg</div>
+        <ul>
+          <li data-fr="Analyse des données pré/post-migration : détection d'anomalies, réconciliation des écarts" data-en="Pre/post-migration data analysis: anomaly detection, gap reconciliation">Analyse des données pré/post-migration : détection d'anomalies, réconciliation des écarts</li>
+          <li data-fr="Contrôle qualité, synthèses et recommandations aux équipes métiers" data-en="Quality control, summaries and recommendations to business teams">Contrôle qualité, synthèses et recommandations aux équipes métiers</li>
+          <li data-fr="Automatisation Python, reporting Power BI, coordination IT &amp; opérationnel" data-en="Python automation, Power BI reporting, IT &amp; ops coordination">Automatisation Python, reporting Power BI, coordination IT &amp; opérationnel</li>
+        </ul>
+      </div>
+      <div class="exp reveal">
+        <div class="exp-top"><span class="exp-role" data-fr="Data Analyst — Équipe Analyse &amp; Pilotage de Performance" data-en="Data Analyst — Performance Analysis &amp; Steering Team">Data Analyst — Équipe Analyse &amp; Pilotage de Performance</span><span class="exp-date">Fév. — Août 2024</span></div>
+        <div class="exp-co">Groupe Canal+ · Direction Marketing International · Paris</div>
+        <ul>
+          <li data-fr="Analyse des KPI abonnés Pay TV (Churn, ARPU, Taux Réabo) — marchés Afrique francophone &amp; DROM, 24 pays" data-en="Pay TV subscriber KPIs (Churn, ARPU, Renewal rate) — French-speaking Africa &amp; overseas markets, 24 countries">Analyse des KPI abonnés Pay TV (Churn, ARPU, Taux Réabo) — marchés Afrique francophone &amp; DROM, 24 pays</li>
+          <li data-fr="Segmentation des abonnés sportifs (Ligue 1, Champions League) — SQL, Dataiku, Power BI" data-en="Sports subscriber segmentation (Ligue 1, Champions League) — SQL, Dataiku, Power BI">Segmentation des abonnés sportifs (Ligue 1, Champions League) — SQL, Dataiku, Power BI</li>
+          <li data-fr="Modèle prédictif de churn (régression logistique, arbres, forêts aléatoires) — Python" data-en="Predictive churn model (logistic regression, trees, random forests) — Python">Modèle prédictif de churn (régression logistique, arbres, forêts aléatoires) — Python</li>
+          <li data-fr="Automatisation des reportings OTT/SAT → temps de production divisé par 2 (Dataiku, Snowflake)" data-en="OTT/SAT reporting automation → production time halved (Dataiku, Snowflake)">Automatisation des reportings OTT/SAT → temps de production divisé par 2 (Dataiku, Snowflake)</li>
+        </ul>
+      </div>
+      <div class="exp reveal">
+        <div class="exp-top"><span class="exp-role">Data / Business Analyst — CDI</span><span class="exp-date">2019 — 2021</span></div>
+        <div class="exp-co">Gozem · Mobilité, livraison &amp; fintech · Togo</div>
+        <ul>
+          <li data-fr="Analyse comportementale de 50 000+ utilisateurs pour la segmentation et le ciblage marketing" data-en="Behavioural analysis of 50,000+ users for segmentation and marketing targeting">Analyse comportementale de 50 000+ utilisateurs pour la segmentation et le ciblage marketing</li>
+          <li data-fr="Pilotage des KPI opérationnels &amp; commerciaux : VTC, livraison, paiement mobile" data-en="Operational &amp; commercial KPI steering: ride-hailing, delivery, mobile payment">Pilotage des KPI opérationnels &amp; commerciaux : VTC, livraison, paiement mobile</li>
+          <li data-fr="Reporting automatisé &amp; dashboards de suivi pour le management" data-en="Automated reporting &amp; tracking dashboards for management">Reporting automatisé &amp; dashboards de suivi pour le management</li>
+          <li data-fr="Benchmark concurrentiel &amp; analyse de pénétration de marché (Afrique subsaharienne)" data-en="Competitive benchmark &amp; market penetration analysis (Sub-Saharan Africa)">Benchmark concurrentiel &amp; analyse de pénétration de marché (Afrique subsaharienne)</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="projects">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="sec-num">04 — <span data-fr="Projets" data-en="Projects">Projets</span></div>
+      <h2 class="sec-title" data-fr="Applications &amp; analyses" data-en="Apps &amp; analyses">Applications &amp; analyses</h2>
+      <p class="sec-sub" data-fr="Des outils interactifs déployés en ligne. Si une app est en veille, cliquez sur « Yes, get this app back up! » — elle redémarre en quelques secondes." data-en="Interactive tools deployed online. If an app is asleep, click “Yes, get this app back up!” — it restarts in seconds.">Des outils interactifs déployés en ligne. Si une app est en veille, cliquez sur « Yes, get this app back up! » — elle redémarre en quelques secondes.</p>
+    </div>
+    <div class="proj-grid">
+      <div class="proj reveal">
+        <div class="proj-ic">🛒</div>
+        <h3 data-fr="Optimisation d'assortiment — Retail" data-en="Assortment optimisation — Retail">Optimisation d'assortiment — Retail</h3>
+        <p data-fr="Performance produit : CA, marge, élasticité promo. Recommandations conserver / tester / retirer." data-en="Product performance: revenue, margin, promo elasticity. Keep / test / drop recommendations.">Performance produit : CA, marge, élasticité promo. Recommandations conserver / tester / retirer.</p>
+        <div class="proj-foot"><span class="proj-stack">Python · SQL · Power BI</span><a class="proj-link" href="https://app-optimisation-aapprtiment-fmcg-aaa2kax5ty2sjwjrjcsgsj.streamlit.app/" target="_blank" rel="noopener" data-fr="Ouvrir →" data-en="Open →">Ouvrir →</a></div>
+      </div>
+      <div class="proj reveal">
+        <div class="proj-ic">💬</div>
+        <h3 data-fr="Social Listening — Marques de luxe" data-en="Social Listening — Luxury brands">Social Listening — Marques de luxe</h3>
+        <p data-fr="Analyse de sentiments et thématiques à partir de mentions réseaux sociaux. Visuel et interactif." data-en="Sentiment and topic analysis from social media mentions. Visual and interactive.">Analyse de sentiments et thématiques à partir de mentions réseaux sociaux. Visuel et interactif.</p>
+        <div class="proj-foot"><span class="proj-stack">Python · NLP · Streamlit</span><a class="proj-link" href="https://social-listening-luxe-bjhqf4fartf8c3wqswcv7x.streamlit.app/" target="_blank" rel="noopener" data-fr="Ouvrir →" data-en="Open →">Ouvrir →</a></div>
+      </div>
+      <div class="proj reveal">
+        <div class="proj-ic">👥</div>
+        <h3 data-fr="Pilotage RH interactif" data-en="Interactive HR dashboard">Pilotage RH interactif</h3>
+        <p data-fr="Suivi des effectifs, masse salariale, absences et turnover, avec visualisations filtrables." data-en="Headcount, payroll, absences and turnover tracking, with filterable visuals.">Suivi des effectifs, masse salariale, absences et turnover, avec visualisations filtrables.</p>
+        <div class="proj-foot"><span class="proj-stack">Python · Streamlit</span><a class="proj-link" href="https://pilotage-rh-app-fqob5xhyhj3b5wfwduz5vr.streamlit.app/" target="_blank" rel="noopener" data-fr="Ouvrir →" data-en="Open →">Ouvrir →</a></div>
+      </div>
+      <div class="proj reveal">
+        <div class="proj-ic">🚗</div>
+        <h3 data-fr="Sinistralité automobile — Assurance" data-en="Auto claims — Insurance">Sinistralité automobile — Assurance</h3>
+        <p data-fr="Analyse comportementale des assurés et segmentation des risques pour optimiser la tarification." data-en="Policyholder behaviour analysis and risk segmentation to optimise pricing.">Analyse comportementale des assurés et segmentation des risques pour optimiser la tarification.</p>
+        <div class="proj-foot"><span class="proj-stack">Python · SQL · Power BI</span><a class="proj-link" href="https://github.com/Samadkod/3.Projet-data_Assurance-auto" target="_blank" rel="noopener" data-fr="Voir le code →" data-en="View code →">Voir le code →</a></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="contact">
+  <div class="wrap">
+    <div class="contact-box reveal">
+      <div class="sec-num" style="text-align:center">05 — Contact</div>
+      <h2 data-fr="Construisons quelque chose ensemble." data-en="Let's build something together.">Construisons quelque chose ensemble.</h2>
+      <p data-fr="Disponible immédiatement pour un CDI (priorité), un CDD ou une mission freelance. Parlons de vos besoins en analyse, automatisation ou tableaux de bord." data-en="Available now for a permanent role (priority), a contract or freelance work. Let's talk about your analytics, automation or dashboard needs.">Disponible immédiatement pour un CDI (priorité), un CDD ou une mission freelance. Parlons de vos besoins en analyse, automatisation ou tableaux de bord.</p>
+      <div class="contact-links">
+        <a class="btn btn-primary" href="mailto:samad.kodon@gmail.com">✉ <span data-fr="M'écrire" data-en="Email me">M'écrire</span></a>
+        <a class="btn btn-ghost" href="https://linkedin.com/in/skodon" target="_blank" rel="noopener">in · LinkedIn</a>
+        <a class="btn btn-ghost" href="https://github.com/Samadkod" target="_blank" rel="noopener">⌥ GitHub</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  © <span id="yr"></span> Samadou Kodon · <span data-fr="Conçu avec attention" data-en="Crafted with care">Conçu avec attention</span>
+</footer>
+
+<script>
+document.getElementById('yr').textContent=new Date().getFullYear();
+
+// THEME
+const tBtn=document.getElementById('theme'),root=document.documentElement;
+function setTheme(t){root.setAttribute('data-theme',t);tBtn.textContent=t==='dark'?'☀':'☾';}
+setTheme('dark');
+tBtn.onclick=()=>setTheme(root.getAttribute('data-theme')==='dark'?'light':'dark');
+
+// LANG
+const lBtn=document.getElementById('lang');let lang='fr';
+function setLang(l){
+  lang=l;lBtn.textContent=l==='fr'?'EN':'FR';
+  document.documentElement.lang=l;
+  document.querySelectorAll('[data-fr]').forEach(el=>{
+    const v=el.getAttribute('data-'+l);if(v!=null)el.innerHTML=v;
+  });
+}
+lBtn.onclick=()=>setLang(lang==='fr'?'en':'fr');
+
+// REVEAL on scroll
+const io=new IntersectionObserver(es=>{
+  es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}});
+},{threshold:.12});
+document.querySelectorAll('.reveal').forEach((el,i)=>{el.style.transitionDelay=(i%4*60)+'ms';io.observe(el);});
+</script>
+</body>
+</html>
