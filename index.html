@@ -213,6 +213,11 @@ section{padding:70px 0;position:relative}
 .contact-box h2{font-family:'Fraunces',serif;font-weight:600;font-size:clamp(1.6rem,3vw,2.3rem);margin-bottom:14px;letter-spacing:-.02em}
 .contact-box p{color:var(--text-soft);max-width:480px;margin:0 auto 28px;font-weight:300}
 .contact-links{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
+.email-fallback{margin-top:18px;font-size:.85rem;color:var(--text-dim);display:flex;gap:6px;align-items:center;justify-content:center;flex-wrap:wrap}
+.email-fallback a{color:var(--accent);font-weight:500}
+#copy-email-btn{background:none;border:none;cursor:pointer;font-size:.95rem;padding:2px 4px;line-height:1;color:inherit}
+#copy-feedback{color:var(--accent-2);font-weight:600;opacity:0;transition:opacity .3s}
+#copy-feedback.show{opacity:1}
 
 footer{border-top:1px solid var(--line);padding:30px 0;text-align:center;color:var(--text-dim);font-size:.85rem}
 
@@ -492,11 +497,17 @@ footer{border-top:1px solid var(--line);padding:30px 0;text-align:center;color:v
       <h2 data-fr="Construisons quelque chose ensemble." data-en="Let's build something together.">Construisons quelque chose ensemble.</h2>
       <p data-fr="Disponible rapidement (préavis à négocier) pour un CDI (priorité) ou une mission freelance. Parlons de vos besoins en analyse, qualité de données ou tableaux de bord." data-en="Available soon (notice period negotiable) for a permanent role (priority) or freelance work. Let's talk about your analytics, data quality or dashboard needs.">Disponible rapidement (préavis à négocier) pour un CDI (priorité) ou une mission freelance. Parlons de vos besoins en analyse, qualité de données ou tableaux de bord.</p>
       <div class="contact-links">
-        <a class="btn btn-primary" href="mailto:samadou.kodon@gmail.com">✉ <span data-fr="M'écrire" data-en="Email me">M'écrire</span></a>
+        <a class="btn btn-primary" id="email-btn" href="mailto:samadou.kodon@gmail.com">✉ <span data-fr="M'écrire" data-en="Email me">M'écrire</span></a>
         <a class="btn btn-ghost" href="https://linkedin.com/in/skodon" target="_blank" rel="noopener">in · LinkedIn</a>
         <a class="btn btn-ghost" href="https://github.com/Samadkod" target="_blank" rel="noopener">⌥ GitHub</a>
         <a class="btn btn-ghost" href="assets/CV_Samadou_KODON.pdf" target="_blank" rel="noopener" download data-fr="📄 CV" data-en="📄 Resume">📄 CV</a>
       </div>
+      <p class="email-fallback">
+        <span data-fr="Pas de client mail configuré ? Écris-moi directement à" data-en="No mail client set up? Email me directly at">Pas de client mail configuré ? Écris-moi directement à</span>
+        <a href="mailto:samadou.kodon@gmail.com">samadou.kodon@gmail.com</a>
+        <button type="button" id="copy-email-btn" title="Copier l'adresse">📋</button>
+        <span id="copy-feedback"></span>
+      </p>
     </div>
   </div>
 </section>
@@ -548,6 +559,19 @@ const countIo=new IntersectionObserver(es=>{
   es.forEach(e=>{if(e.isIntersecting){animateCount(e.target);countIo.unobserve(e.target);}});
 },{threshold:.5});
 document.querySelectorAll('.num').forEach(el=>countIo.observe(el));
+
+// EMAIL COPY fallback (in case no mail client is configured)
+const copyFeedback=document.getElementById('copy-feedback');
+function copyEmail(){
+  navigator.clipboard?.writeText('samadou.kodon@gmail.com').then(()=>{
+    copyFeedback.textContent=lang==='fr'?'Copié !':'Copied!';
+    copyFeedback.classList.add('show');
+    clearTimeout(copyEmail._t);
+    copyEmail._t=setTimeout(()=>copyFeedback.classList.remove('show'),2200);
+  }).catch(()=>{});
+}
+document.getElementById('copy-email-btn').addEventListener('click',copyEmail);
+document.getElementById('email-btn').addEventListener('click',copyEmail);
 </script>
 </body>
 </html>
