@@ -4,6 +4,17 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Samadou Kodon — Data Analyst</title>
+<meta name="description" content="Samadou Kodon — Data Analyst à Strasbourg. 3 ans d'expérience en qualité &amp; migration de données (OCEA), analyse KPI et churn (Canal+), pilotage data (Gozem). Python, SQL, Power BI.">
+<meta name="author" content="Samadou Kodon">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Samadou Kodon — Data Analyst">
+<meta property="og:description" content="Data Analyst · 3 ans d'expérience en analyse, qualité/migration de données et reporting décisionnel. Canal+, OCEA Smart Building, Gozem.">
+<meta property="og:image" content="assets/photo-samadou-kodon.jpg">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Samadou Kodon — Data Analyst">
+<meta name="twitter:description" content="Data Analyst · 3 ans d'expérience en analyse, qualité/migration de données et reporting décisionnel.">
+<meta name="twitter:image" content="assets/photo-samadou-kodon.jpg">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%235b9dff'/%3E%3Cstop offset='1' stop-color='%237cf0c8'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='64' height='64' rx='16' fill='%230d0f14'/%3E%3Ccircle cx='32' cy='32' r='27' fill='none' stroke='url(%23g)' stroke-width='4'/%3E%3Ctext x='32' y='41' font-family='Georgia,serif' font-size='26' font-weight='700' fill='url(%23g)' text-anchor='middle'%3ESK%3C/text%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Outfit:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
@@ -51,8 +62,14 @@ nav{
   border-bottom:1px solid var(--line);
 }
 .nav-in{display:flex;align-items:center;justify-content:space-between;height:64px;max-width:1080px;margin:0 auto;padding:0 24px}
-.logo{font-family:'Fraunces',serif;font-weight:600;font-size:1.25rem;letter-spacing:-.02em}
+.logo{font-family:'Fraunces',serif;font-weight:600;font-size:1.25rem;letter-spacing:-.02em;display:flex;align-items:center;gap:10px}
 .logo span{color:var(--accent)}
+.logo-badge{
+  width:30px;height:30px;border-radius:50%;flex-shrink:0;
+  background:linear-gradient(135deg,var(--accent),var(--accent-2));
+  color:#0d0f14;font-family:'Outfit',sans-serif;font-weight:700;font-size:.72rem;
+  display:flex;align-items:center;justify-content:center;
+}
 .nav-links{display:flex;gap:28px;align-items:center}
 .nav-links a{font-size:.9rem;color:var(--text-soft);transition:color .2s;font-weight:500}
 .nav-links a:hover{color:var(--text)}
@@ -67,6 +84,12 @@ nav{
 
 /* HERO */
 header{padding:140px 0 90px;position:relative}
+.hero-grid{display:grid;grid-template-columns:1fr 220px;gap:48px;align-items:center}
+.avatar-wrap{display:flex;justify-content:center}
+.avatar{
+  width:200px;height:200px;border-radius:50%;object-fit:cover;
+  border:3px solid var(--line);box-shadow:var(--shadow);
+}
 .tag{
   display:inline-flex;align-items:center;gap:8px;
   background:color-mix(in srgb,var(--accent-2) 14%, transparent);
@@ -152,6 +175,39 @@ section{padding:70px 0;position:relative}
 .proj-link{color:var(--accent);font-size:.85rem;font-weight:600;display:inline-flex;align-items:center;gap:5px;transition:gap .2s}
 .proj-link:hover{gap:9px}
 
+/* FORMATION */
+.edu-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-bottom:24px}
+.edu-card{background:var(--bg-card);border:1px solid var(--line);border-radius:16px;padding:24px;transition:transform .25s,border-color .25s}
+.edu-card:hover{transform:translateY(-4px);border-color:var(--accent)}
+.edu-card h3{font-size:1.05rem;font-weight:600;margin-bottom:6px}
+.edu-card .edu-org{color:var(--accent-2);font-weight:500;font-size:.92rem;margin-bottom:4px}
+.edu-card .edu-date{font-family:'JetBrains Mono',monospace;font-size:.78rem;color:var(--text-dim);margin-bottom:10px}
+.edu-card .edu-note{color:var(--text-soft);font-size:.9rem;font-weight:300}
+.cert-row{display:flex;flex-wrap:wrap;gap:10px;align-items:center}
+.cert-lbl{color:var(--text-soft);font-size:.85rem;font-weight:500;margin-right:4px}
+.cert{
+  font-family:'JetBrains Mono',monospace;font-size:.78rem;
+  background:color-mix(in srgb,var(--accent-warm) 14%, transparent);
+  color:var(--accent-warm);border:1px solid color-mix(in srgb,var(--accent-warm) 30%, transparent);
+  padding:6px 12px;border-radius:100px;
+}
+
+/* TESTIMONIALS */
+.testi-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+.testi-card{background:var(--bg-card);border:1px solid var(--line);border-radius:16px;padding:28px;transition:transform .25s,border-color .25s}
+.testi-card:hover{transform:translateY(-4px);border-color:var(--accent)}
+.testi-quote{font-family:'Fraunces',serif;font-size:1.4rem;color:var(--accent);line-height:1;margin-bottom:10px}
+.testi-text{color:var(--text-soft);font-size:.96rem;font-weight:300;margin-bottom:18px}
+.testi-who{display:flex;align-items:center;gap:12px}
+.testi-avatar{
+  width:42px;height:42px;border-radius:50%;
+  background:linear-gradient(135deg,var(--accent),var(--accent-2));
+  color:#0d0f14;font-weight:700;font-size:.95rem;
+  display:flex;align-items:center;justify-content:center;flex-shrink:0;
+}
+.testi-name{font-weight:600;font-size:.92rem}
+.testi-role{color:var(--text-dim);font-size:.82rem}
+
 /* CONTACT */
 .contact-box{background:var(--bg-card);border:1px solid var(--line);border-radius:20px;padding:48px;text-align:center}
 .contact-box h2{font-family:'Fraunces',serif;font-weight:600;font-size:clamp(1.6rem,3vw,2.3rem);margin-bottom:14px;letter-spacing:-.02em}
@@ -167,7 +223,11 @@ footer{border-top:1px solid var(--line);padding:30px 0;text-align:center;color:v
   .nav-links{display:none}
   .menu-toggle{display:flex}
   .about-grid{grid-template-columns:1fr;gap:28px}
-  .skill-grid,.proj-grid{grid-template-columns:1fr}
+  .skill-grid,.proj-grid,.edu-grid,.testi-grid{grid-template-columns:1fr}
+  .hero-grid{grid-template-columns:1fr;text-align:center}
+  .hero-grid .avatar-wrap{order:-1}
+  .avatar{width:140px;height:140px}
+  .hero-meta,.cta-row{justify-content:center}
   header{padding:120px 0 60px}
 }
 [lang-hide]{display:none!important}
@@ -177,12 +237,14 @@ footer{border-top:1px solid var(--line);padding:30px 0;text-align:center;color:v
 
 <nav>
   <div class="nav-in">
-    <a href="#home" class="logo">Samadou<span>.</span></a>
+    <a href="#home" class="logo"><span class="logo-badge">SK</span>Samadou<span>.</span></a>
     <div class="nav-links">
       <a href="#about" data-fr="À propos" data-en="About">À propos</a>
       <a href="#skills" data-fr="Compétences" data-en="Skills">Compétences</a>
       <a href="#experience" data-fr="Expérience" data-en="Experience">Expérience</a>
+      <a href="#formation" data-fr="Formation" data-en="Education">Formation</a>
       <a href="#projects" data-fr="Projets" data-en="Projects">Projets</a>
+      <a href="#testimonials" data-fr="Recommandations" data-en="Testimonials">Recommandations</a>
       <a href="#contact" data-fr="Contact" data-en="Contact">Contact</a>
     </div>
     <div class="controls">
@@ -194,20 +256,28 @@ footer{border-top:1px solid var(--line);padding:30px 0;text-align:center;color:v
 
 <header id="home">
   <div class="wrap">
-    <div class="tag reveal"><span class="dot"></span><span data-fr="Disponible immédiatement — CDI / CDD / Freelance" data-en="Available now — Permanent / Contract / Freelance">Disponible immédiatement — CDI / CDD / Freelance</span></div>
-    <h1 class="reveal">
-      <span data-fr="Je transforme les données en" data-en="I turn data into">Je transforme les données en</span>
-      <span class="grad" data-fr="décisions concrètes." data-en="real decisions.">décisions concrètes.</span>
-    </h1>
-    <p class="lead reveal" data-fr="Data Analyst · 3 ans d'expérience en analyse, pilotage de KPI et reporting décisionnel. Une expérience média internationale (Canal+) et tech (Gozem), boostée par l'IA au quotidien." data-en="Data Analyst · 3 years in analytics, KPI steering and decision reporting. International media (Canal+) and tech (Gozem) experience, powered by AI every day.">Data Analyst · 3 ans d'expérience en analyse, pilotage de KPI et reporting décisionnel. Une expérience média internationale (Canal+) et tech (Gozem), boostée par l'IA au quotidien.</p>
-    <div class="hero-meta reveal">
-      <span class="chip">📍 <b>Strasbourg</b></span>
-      <span class="chip" data-fr="🌍 Mobilité Paris" data-en="🌍 Open to Paris">🌍 Mobilité Paris</span>
-      <span class="chip">🎓 <b>Master Big Data</b> <span data-fr="(major)" data-en="(top of class)">(major)</span></span>
-    </div>
-    <div class="cta-row reveal">
-      <a href="#projects" class="btn btn-primary" data-fr="Voir mes projets →" data-en="See my work →">Voir mes projets →</a>
-      <a href="#contact" class="btn btn-ghost" data-fr="Me contacter" data-en="Get in touch">Me contacter</a>
+    <div class="hero-grid">
+      <div>
+        <div class="tag reveal"><span class="dot"></span><span data-fr="Disponible rapidement — CDI / Freelance" data-en="Available soon — Permanent / Freelance">Disponible rapidement — CDI / Freelance</span></div>
+        <h1 class="reveal">
+          <span data-fr="Je transforme les données en" data-en="I turn data into">Je transforme les données en</span>
+          <span class="grad" data-fr="décisions concrètes." data-en="real decisions.">décisions concrètes.</span>
+        </h1>
+        <p class="lead reveal" data-fr="Data Analyst · 3 ans d'expérience en qualité &amp; migration de données, pilotage de KPI et reporting décisionnel. Une mission ERP critique (OCEA), une expérience média internationale (Canal+) et tech (Gozem)." data-en="Data Analyst · 3 years in data quality &amp; migration, KPI steering and decision reporting. A critical ERP mission (OCEA), international media (Canal+) and tech (Gozem) experience.">Data Analyst · 3 ans d'expérience en qualité &amp; migration de données, pilotage de KPI et reporting décisionnel. Une mission ERP critique (OCEA), une expérience média internationale (Canal+) et tech (Gozem).</p>
+        <div class="hero-meta reveal">
+          <span class="chip">📍 <b>Strasbourg</b></span>
+          <span class="chip" data-fr="🌍 Télétravail &amp; hybride France" data-en="🌍 Remote &amp; hybrid, France-wide">🌍 Télétravail &amp; hybride France</span>
+          <span class="chip">🎓 <b>Master Big Data</b> <span data-fr="(major)" data-en="(top of class)">(major)</span></span>
+        </div>
+        <div class="cta-row reveal">
+          <a href="#projects" class="btn btn-primary" data-fr="Voir mes projets →" data-en="See my work →">Voir mes projets →</a>
+          <a href="assets/CV_Samadou_KODON.pdf" class="btn btn-ghost" target="_blank" rel="noopener" download data-fr="📄 Télécharger mon CV" data-en="📄 Download my CV">📄 Télécharger mon CV</a>
+          <a href="#contact" class="btn btn-ghost" data-fr="Me contacter" data-en="Get in touch">Me contacter</a>
+        </div>
+      </div>
+      <div class="avatar-wrap reveal">
+        <img class="avatar" src="assets/photo-samadou-kodon.jpg" alt="Photo de Samadou Kodon" width="200" height="200" loading="eager">
+      </div>
     </div>
   </div>
 </header>
@@ -219,14 +289,14 @@ footer{border-top:1px solid var(--line);padding:30px 0;text-align:center;color:v
         <div class="sec-num">01 — <span data-fr="À propos" data-en="About">À propos</span></div>
         <h2 class="sec-title" style="margin-bottom:24px" data-fr="Le lien entre la data et le métier." data-en="The bridge between data and business.">Le lien entre la data et le métier.</h2>
         <p data-fr="Diplômé en <strong>Big Data &amp; Data Science</strong> (major de promotion) et en <strong>économie quantitative</strong>, j'aide les équipes à mieux comprendre leurs données pour décider plus vite et plus juste." data-en="Graduate in <strong>Big Data &amp; Data Science</strong> (top of class) and <strong>quantitative economics</strong>, I help teams understand their data to decide faster and better.">Diplômé en <strong>Big Data &amp; Data Science</strong> (major de promotion) et en <strong>économie quantitative</strong>, j'aide les équipes à mieux comprendre leurs données pour décider plus vite et plus juste.</p>
-        <p data-fr="Mon parcours mêle un grand groupe média (<strong>Canal+</strong>, marchés internationaux) et une startup tech africaine (<strong>Gozem</strong>) : KPI, segmentation, churn, automatisation de reporting." data-en="My path blends a major media group (<strong>Canal+</strong>, international markets) and an African tech startup (<strong>Gozem</strong>): KPIs, segmentation, churn, reporting automation.">Mon parcours mêle un grand groupe média (<strong>Canal+</strong>, marchés internationaux) et une startup tech africaine (<strong>Gozem</strong>) : KPI, segmentation, churn, automatisation de reporting.</p>
+        <p data-fr="Actuellement chez <strong>OCEA Smart Building</strong>, je pilote en autonomie la qualité et la migration ERP de plus de 11 700 sites. Mon parcours mêle aussi un grand groupe média (<strong>Canal+</strong>, marchés internationaux) et une startup tech africaine (<strong>Gozem</strong>) : KPI, segmentation, churn, automatisation de reporting." data-en="Currently at <strong>OCEA Smart Building</strong>, I independently drive data quality and ERP migration across 11,700+ sites. My path also blends a major media group (<strong>Canal+</strong>, international markets) and an African tech startup (<strong>Gozem</strong>): KPIs, segmentation, churn, reporting automation.">Actuellement chez <strong>OCEA Smart Building</strong>, je pilote en autonomie la qualité et la migration ERP de plus de 11 700 sites. Mon parcours mêle aussi un grand groupe média (<strong>Canal+</strong>, marchés internationaux) et une startup tech africaine (<strong>Gozem</strong>) : KPI, segmentation, churn, automatisation de reporting.</p>
         <p data-fr="Mon approche : des outils <strong>simples, visuels et concrets</strong> — qui parlent à tous, pas seulement aux data scientists. Et j'utilise l'<strong>IA</strong> pour gagner en efficacité au quotidien." data-en="My approach: <strong>simple, visual, concrete</strong> tools — for everyone, not just data scientists. And I use <strong>AI</strong> daily to work more efficiently.">Mon approche : des outils <strong>simples, visuels et concrets</strong> — qui parlent à tous, pas seulement aux data scientists. Et j'utilise l'<strong>IA</strong> pour gagner en efficacité au quotidien.</p>
       </div>
       <div class="about-side reveal">
-        <div class="fact"><div class="big">3 <span style="font-size:1rem;color:var(--text-soft)" data-fr="ans" data-en="yrs">ans</span></div><div class="lbl" data-fr="d'expérience data" data-en="data experience">d'expérience data</div></div>
-        <div class="fact"><div class="big">24</div><div class="lbl" data-fr="pays analysés chez Canal+ (Afrique)" data-en="countries analysed at Canal+ (Africa)">pays analysés chez Canal+ (Afrique)</div></div>
-        <div class="fact"><div class="big">50K+</div><div class="lbl" data-fr="utilisateurs analysés chez Gozem" data-en="users analysed at Gozem">utilisateurs analysés chez Gozem</div></div>
-        <div class="fact"><div class="big">×2</div><div class="lbl" data-fr="reporting plus rapide via automatisation" data-en="faster reporting through automation">reporting plus rapide via automatisation</div></div>
+        <div class="fact"><div class="big"><span class="num" data-target="3">0</span> <span style="font-size:1rem;color:var(--text-soft)" data-fr="ans" data-en="yrs">ans</span></div><div class="lbl" data-fr="d'expérience data" data-en="data experience">d'expérience data</div></div>
+        <div class="fact"><div class="big"><span class="num" data-target="11700" data-suffix="+">0</span></div><div class="lbl" data-fr="sites pilotés en qualité &amp; migration data (OCEA)" data-en="sites managed for data quality &amp; migration (OCEA)">sites pilotés en qualité &amp; migration data (OCEA)</div></div>
+        <div class="fact"><div class="big"><span class="num" data-target="14">0</span></div><div class="lbl" data-fr="marchés analysés chez Canal+ (10 pays Afrique subsaharienne + 4 DROM)" data-en="markets analysed at Canal+ (10 Sub-Saharan African countries + 4 overseas territories)">marchés analysés chez Canal+ (10 pays Afrique subsaharienne + 4 DROM)</div></div>
+        <div class="fact"><div class="big"><span class="num" data-target="80" data-suffix="%+">0</span></div><div class="lbl" data-fr="rétention chauffeurs pilotée chez Gozem" data-en="driver retention rate driven at Gozem">rétention chauffeurs pilotée chez Gozem</div></div>
       </div>
     </div>
   </div>
@@ -239,9 +309,10 @@ footer{border-top:1px solid var(--line);padding:30px 0;text-align:center;color:v
       <h2 class="sec-title" data-fr="Ma boîte à outils" data-en="My toolbox">Ma boîte à outils</h2>
     </div>
     <div class="skill-grid">
-      <div class="skill-card reveal"><h3><span class="ic">🐍</span><span data-fr="Langages &amp; Analyse" data-en="Languages &amp; Analysis">Langages &amp; Analyse</span></h3><div class="tags"><span class="t">Python</span><span class="t">SQL</span><span class="t">R</span><span class="t">SAS</span><span class="t">Pandas</span><span class="t">Scikit-learn</span></div></div>
-      <div class="skill-card reveal"><h3><span class="ic">📊</span><span data-fr="Visualisation" data-en="Visualisation">Visualisation</span></h3><div class="tags"><span class="t">Power BI</span><span class="t">Streamlit</span><span class="t">Plotly</span><span class="t">Excel</span></div></div>
-      <div class="skill-card reveal"><h3><span class="ic">☁️</span><span data-fr="Data &amp; Cloud" data-en="Data &amp; Cloud">Data &amp; Cloud</span></h3><div class="tags"><span class="t">Dataiku</span><span class="t">Snowflake</span><span class="t">Git</span><span class="t">ETL</span></div></div>
+      <div class="skill-card reveal"><h3><span class="ic">🧹</span><span data-fr="Qualité &amp; Migration de données" data-en="Data quality &amp; migration">Qualité &amp; Migration de données</span></h3><div class="tags"><span class="t" data-fr="Contrôle qualité" data-en="Quality control">Contrôle qualité</span><span class="t" data-fr="Réconciliation" data-en="Reconciliation">Réconciliation</span><span class="t" data-fr="Migration ERP" data-en="ERP migration">Migration ERP</span><span class="t">ETL</span></div></div>
+      <div class="skill-card reveal"><h3><span class="ic">🐍</span><span data-fr="Langages &amp; Analyse" data-en="Languages &amp; Analysis">Langages &amp; Analyse</span></h3><div class="tags"><span class="t">Python</span><span class="t" data-fr="SQL avancé" data-en="Advanced SQL">SQL avancé</span><span class="t">R</span><span class="t">SAS</span><span class="t">Pandas</span><span class="t">Scikit-learn</span></div></div>
+      <div class="skill-card reveal"><h3><span class="ic">📊</span><span data-fr="Visualisation" data-en="Visualisation">Visualisation</span></h3><div class="tags"><span class="t">Power BI</span><span class="t">DAX</span><span class="t">Power Query</span><span class="t">Streamlit</span><span class="t">Excel avancé</span></div></div>
+      <div class="skill-card reveal"><h3><span class="ic">☁️</span><span data-fr="Data &amp; Cloud" data-en="Data &amp; Cloud">Data &amp; Cloud</span></h3><div class="tags"><span class="t">Dataiku DSS</span><span class="t">Snowflake</span><span class="t">Git / GitHub</span></div></div>
       <div class="skill-card reveal"><h3><span class="ic">🤖</span><span data-fr="IA &amp; Automatisation" data-en="AI &amp; Automation">IA &amp; Automatisation</span></h3><div class="tags"><span class="t">Agents IA</span><span class="t" data-fr="Génération de code" data-en="Code generation">Génération de code</span><span class="t">Prompting</span><span class="t" data-fr="Workflows" data-en="Workflows">Workflows</span></div></div>
     </div>
   </div>
@@ -258,31 +329,59 @@ footer{border-top:1px solid var(--line);padding:30px 0;text-align:center;color:v
         <div class="exp-top"><span class="exp-role" data-fr="Data Analyst — Migration SI (intérim)" data-en="Data Analyst — IS Migration (contract)">Data Analyst — Migration SI (intérim)</span><span class="exp-date">Sept. 2025 — Déc. 2026</span></div>
         <div class="exp-co">OCEA Smart Building · Strasbourg</div>
         <ul>
-          <li data-fr="Analyse des données pré/post-migration : détection d'anomalies, réconciliation des écarts" data-en="Pre/post-migration data analysis: anomaly detection, gap reconciliation">Analyse des données pré/post-migration : détection d'anomalies, réconciliation des écarts</li>
-          <li data-fr="Contrôle qualité, synthèses et recommandations aux équipes métiers" data-en="Quality control, summaries and recommendations to business teams">Contrôle qualité, synthèses et recommandations aux équipes métiers</li>
-          <li data-fr="Automatisation Python, reporting Power BI, coordination IT &amp; opérationnel" data-en="Python automation, Power BI reporting, IT &amp; ops coordination">Automatisation Python, reporting Power BI, coordination IT &amp; opérationnel</li>
+          <li data-fr="Pilote en autonomie la qualité &amp; migration de données sur le périmètre DR Est (Strasbourg, Dijon, Mulhouse, Metz — 11 723 sites) : 2 951 sites migrés, taux de nettoyage de 81%" data-en="Independently drives data quality &amp; migration across the DR Est region (Strasbourg, Dijon, Mulhouse, Metz — 11,723 sites): 2,951 sites migrated, 81% cleaning rate">Pilote en autonomie la qualité &amp; migration de données sur le périmètre DR Est (Strasbourg, Dijon, Mulhouse, Metz — 11 723 sites) : 2 951 sites migrés, taux de nettoyage de 81%</li>
+          <li data-fr="Structure la migration ERP Harmonie → Imago par lots, en coordonnant l'ouverture des lots avec les équipes produit/dev" data-en="Structures the Harmonie → Imago ERP migration in batches, coordinating batch openings with product/dev teams">Structure la migration ERP Harmonie → Imago par lots, en coordonnant l'ouverture des lots avec les équipes produit/dev</li>
+          <li data-fr="Détecte les anomalies via des rapports Power BI dédiés ; interprète les erreurs de validation SSM et escalade les cas complexes à la DSI" data-en="Detects anomalies via dedicated Power BI reports; interprets SSM validation errors and escalates complex cases to IT">Détecte les anomalies via des rapports Power BI dédiés ; interprète les erreurs de validation SSM et escalade les cas complexes à la DSI</li>
+          <li data-fr="Développe des scripts Python pour automatiser la préparation de données (ex : détection de 2 400+ sites sans historique avant migration)" data-en="Develops Python scripts to automate data prep (e.g. detecting 2,400+ sites with no history before migration)">Développe des scripts Python pour automatiser la préparation de données (ex : détection de 2 400+ sites sans historique avant migration)</li>
         </ul>
       </div>
       <div class="exp reveal">
-        <div class="exp-top"><span class="exp-role" data-fr="Data Analyst — Équipe Analyse &amp; Pilotage de Performance" data-en="Data Analyst — Performance Analysis &amp; Steering Team">Data Analyst — Équipe Analyse &amp; Pilotage de Performance</span><span class="exp-date">Fév. — Août 2024</span></div>
+        <div class="exp-top"><span class="exp-role" data-fr="Stage Data Analyst — Analyse &amp; Pilotage de Performance" data-en="Data Analyst Intern — Performance Analysis &amp; Steering">Stage Data Analyst — Analyse &amp; Pilotage de Performance</span><span class="exp-date">Fév. — Août 2024</span></div>
         <div class="exp-co">Groupe Canal+ · Direction Marketing International · Paris</div>
         <ul>
-          <li data-fr="Analyse des KPI abonnés Pay TV (Churn, ARPU, Taux Réabo) — marchés Afrique francophone &amp; DROM, 24 pays" data-en="Pay TV subscriber KPIs (Churn, ARPU, Renewal rate) — French-speaking Africa &amp; overseas markets, 24 countries">Analyse des KPI abonnés Pay TV (Churn, ARPU, Taux Réabo) — marchés Afrique francophone &amp; DROM, 24 pays</li>
-          <li data-fr="Segmentation des abonnés sportifs (Ligue 1, Champions League) — SQL, Dataiku, Power BI" data-en="Sports subscriber segmentation (Ligue 1, Champions League) — SQL, Dataiku, Power BI">Segmentation des abonnés sportifs (Ligue 1, Champions League) — SQL, Dataiku, Power BI</li>
-          <li data-fr="Modèle prédictif de churn (régression logistique, arbres, forêts aléatoires) — Python" data-en="Predictive churn model (logistic regression, trees, random forests) — Python">Modèle prédictif de churn (régression logistique, arbres, forêts aléatoires) — Python</li>
-          <li data-fr="Automatisation des reportings OTT/SAT → temps de production divisé par 2 (Dataiku, Snowflake)" data-en="OTT/SAT reporting automation → production time halved (Dataiku, Snowflake)">Automatisation des reportings OTT/SAT → temps de production divisé par 2 (Dataiku, Snowflake)</li>
+          <li data-fr="Prédiction du churn (Afrique/DROM, contrats postpaid) : sélection de variables &amp; feature engineering sur une base Sonofric complexe" data-en="Churn prediction (Africa/overseas, postpaid contracts): variable selection &amp; feature engineering on a complex Sonofric database">Prédiction du churn (Afrique/DROM, contrats postpaid) : sélection de variables &amp; feature engineering sur une base Sonofric complexe</li>
+          <li data-fr="Segmentation comportementale des abonnés sportifs (Ligue 1, DROM) en 6 profils, à partir de la durée de visionnage par session" data-en="Behavioural segmentation of sports subscribers (Ligue 1, overseas) into 6 profiles, based on session viewing duration">Segmentation comportementale des abonnés sportifs (Ligue 1, DROM) en 6 profils, à partir de la durée de visionnage par session</li>
+          <li data-fr="Migration &amp; automatisation SAS → Snowflake du suivi de la tacite reconduction : pipeline Python, envoi hebdomadaire automatique par région" data-en="SAS → Snowflake migration &amp; automation of contract renewal tracking: Python pipeline, automatic weekly send by region">Migration &amp; automatisation SAS → Snowflake du suivi de la tacite reconduction : pipeline Python, envoi hebdomadaire automatique par région</li>
+          <li data-fr="Suivi des KPI abonnés (réabonnement, résiliations, base installée) via les dashboards Power BI de la Data Factory Groupe" data-en="Subscriber KPI tracking (renewal, cancellations, installed base) via Group Data Factory Power BI dashboards">Suivi des KPI abonnés (réabonnement, résiliations, base installée) via les dashboards Power BI de la Data Factory Groupe</li>
         </ul>
       </div>
       <div class="exp reveal">
-        <div class="exp-top"><span class="exp-role">Data / Business Analyst — CDI</span><span class="exp-date">2019 — 2021</span></div>
-        <div class="exp-co">Gozem · Mobilité, livraison &amp; fintech · Togo</div>
+        <div class="exp-top"><span class="exp-role" data-fr="Chargé de Qualité &amp; Data Analyst — CDI" data-en="Quality Officer &amp; Data Analyst — Permanent contract">Chargé de Qualité &amp; Data Analyst — CDI</span><span class="exp-date">2019 — 2021</span></div>
+        <div class="exp-co">Gozem · Mobilité, livraison &amp; fintech · Lomé, Togo</div>
         <ul>
-          <li data-fr="Analyse comportementale de 50 000+ utilisateurs pour la segmentation et le ciblage marketing" data-en="Behavioural analysis of 50,000+ users for segmentation and marketing targeting">Analyse comportementale de 50 000+ utilisateurs pour la segmentation et le ciblage marketing</li>
-          <li data-fr="Pilotage des KPI opérationnels &amp; commerciaux : VTC, livraison, paiement mobile" data-en="Operational &amp; commercial KPI steering: ride-hailing, delivery, mobile payment">Pilotage des KPI opérationnels &amp; commerciaux : VTC, livraison, paiement mobile</li>
-          <li data-fr="Reporting automatisé &amp; dashboards de suivi pour le management" data-en="Automated reporting &amp; tracking dashboards for management">Reporting automatisé &amp; dashboards de suivi pour le management</li>
-          <li data-fr="Benchmark concurrentiel &amp; analyse de pénétration de marché (Afrique subsaharienne)" data-en="Competitive benchmark &amp; market penetration analysis (Sub-Saharan Africa)">Benchmark concurrentiel &amp; analyse de pénétration de marché (Afrique subsaharienne)</li>
+          <li data-fr="Piloté l'intégration de nouveaux chauffeurs (période probatoire de 8 à 11 jours) avec un taux de rétention supérieur à 80%, via scoring KPI" data-en="Drove onboarding of new drivers (8 to 11-day probation) with a retention rate above 80%, via KPI scoring">Piloté l'intégration de nouveaux chauffeurs (période probatoire de 8 à 11 jours) avec un taux de rétention supérieur à 80%, via scoring KPI</li>
+          <li data-fr="Analysé la performance des chauffeurs (quotidien/hebdo/mensuel), en identifiant les profils à fort taux d'annulation ou en stagnation" data-en="Analysed driver performance (daily/weekly/monthly), identifying high-cancellation or stagnating profiles">Analysé la performance des chauffeurs (quotidien/hebdo/mensuel), en identifiant les profils à fort taux d'annulation ou en stagnation</li>
+          <li data-fr="Extrait et traité les données opérationnelles depuis l'ERP interne ; suivi via Pipedrive (CRM) et Geckoboard (dashboards)" data-en="Extracted and processed operational data from the internal ERP; tracking via Pipedrive (CRM) and Geckoboard (dashboards)">Extrait et traité les données opérationnelles depuis l'ERP interne ; suivi via Pipedrive (CRM) et Geckoboard (dashboards)</li>
         </ul>
       </div>
+    </div>
+  </div>
+</section>
+
+<section id="formation">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="sec-num">04 — <span data-fr="Formation" data-en="Education">Formation</span></div>
+      <h2 class="sec-title" data-fr="Diplômes &amp; certifications" data-en="Degrees &amp; certifications">Diplômes &amp; certifications</h2>
+    </div>
+    <div class="edu-grid">
+      <div class="edu-card reveal">
+        <h3 data-fr="Master 2 — Big Data &amp; Data Science" data-en="Master's — Big Data &amp; Data Science">Master 2 — Big Data &amp; Data Science</h3>
+        <div class="edu-org">Université de Montpellier</div>
+        <div class="edu-date">2023 — 2024</div>
+        <div class="edu-note" data-fr="Major de promotion — Mention Excellent. Machine Learning, DataViz, Modélisation, API." data-en="Top of class — Excellent honours. Machine Learning, DataViz, Modelling, API.">Major de promotion — Mention Excellent. Machine Learning, DataViz, Modélisation, API.</div>
+      </div>
+      <div class="edu-card reveal">
+        <h3 data-fr="Master 2 — Analyse Statistique et Économique" data-en="Master's — Statistical &amp; Economic Analysis">Master 2 — Analyse Statistique et Économique</h3>
+        <div class="edu-org">Université de Franche-Comté · Besançon</div>
+        <div class="edu-date">2021 — 2023</div>
+        <div class="edu-note" data-fr="Spécialisation statistiques, analyse de données, économie. SAS, MySQL, R, Python, Power BI." data-en="Specialisation in statistics, data analysis, economics. SAS, MySQL, R, Python, Power BI.">Spécialisation statistiques, analyse de données, économie. SAS, MySQL, R, Python, Power BI.</div>
+      </div>
+    </div>
+    <div class="cert-row reveal">
+      <span class="cert-lbl" data-fr="Certifications en préparation :" data-en="Certifications in progress:">Certifications en préparation :</span>
+      <span class="cert">PL-300 — Microsoft Power BI Data Analyst</span>
+      <span class="cert">PCAP — Python Institute</span>
     </div>
   </div>
 </section>
@@ -290,11 +389,23 @@ footer{border-top:1px solid var(--line);padding:30px 0;text-align:center;color:v
 <section id="projects">
   <div class="wrap">
     <div class="sec-head reveal">
-      <div class="sec-num">04 — <span data-fr="Projets" data-en="Projects">Projets</span></div>
+      <div class="sec-num">05 — <span data-fr="Projets" data-en="Projects">Projets</span></div>
       <h2 class="sec-title" data-fr="Applications &amp; analyses" data-en="Apps &amp; analyses">Applications &amp; analyses</h2>
       <p class="sec-sub" data-fr="Des outils interactifs déployés en ligne. Si une app est en veille, cliquez sur « Yes, get this app back up! » — elle redémarre en quelques secondes." data-en="Interactive tools deployed online. If an app is asleep, click “Yes, get this app back up!” — it restarts in seconds.">Des outils interactifs déployés en ligne. Si une app est en veille, cliquez sur « Yes, get this app back up! » — elle redémarre en quelques secondes.</p>
     </div>
     <div class="proj-grid">
+      <div class="proj reveal">
+        <div class="proj-ic">🏆</div>
+        <h3 data-fr="DataTour — Compétition data science panafricaine" data-en="DataTour — Pan-African data science competition">DataTour — Compétition data science panafricaine</h3>
+        <p data-fr="Top 4 national Togo (Data Afrique Hub). Credit scoring de bout en bout sous Kaggle : préparation des données, feature engineering, entraînement, évaluation (AUC ~0,70) ; détection et correction d'une fuite de données." data-en="Top 4 nationally in Togo (Data Afrique Hub). End-to-end credit scoring on Kaggle: data prep, feature engineering, training, evaluation (AUC ~0.70); detected and fixed a data leakage issue.">Top 4 national Togo (Data Afrique Hub). Credit scoring de bout en bout sous Kaggle : préparation des données, feature engineering, entraînement, évaluation (AUC ~0,70) ; détection et correction d'une fuite de données.</p>
+        <div class="proj-foot"><span class="proj-stack">Python · Kaggle · Machine Learning</span></div>
+      </div>
+      <div class="proj reveal">
+        <div class="proj-ic">🎮</div>
+        <h3 data-fr="Analyse de marché — Jeux vidéo par région" data-en="Market analysis — Video games by region">Analyse de marché — Jeux vidéo par région</h3>
+        <p data-fr="Pipeline complet de la donnée brute au dashboard décisionnel : nettoyage, modélisation Power BI, DAX." data-en="Full pipeline from raw data to decision dashboard: cleaning, Power BI modelling, DAX.">Pipeline complet de la donnée brute au dashboard décisionnel : nettoyage, modélisation Power BI, DAX.</p>
+        <div class="proj-foot"><span class="proj-stack">Power BI · DAX</span></div>
+      </div>
       <div class="proj reveal">
         <div class="proj-ic">🛒</div>
         <h3 data-fr="Optimisation d'assortiment — Retail" data-en="Assortment optimisation — Retail">Optimisation d'assortiment — Retail</h3>
@@ -323,16 +434,50 @@ footer{border-top:1px solid var(--line);padding:30px 0;text-align:center;color:v
   </div>
 </section>
 
+<section id="testimonials">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="sec-num">06 — <span data-fr="Recommandations" data-en="Testimonials">Recommandations</span></div>
+      <h2 class="sec-title" data-fr="Ils me recommandent" data-en="What people say">Ils me recommandent</h2>
+    </div>
+    <div class="testi-grid">
+      <div class="testi-card reveal">
+        <div class="testi-quote">"</div>
+        <p class="testi-text" data-fr="Samadou a fini major de promotion avec mention très bien du diplôme « Big Data, Data Science et analyse des risques sous Python ». Il maîtrise parfaitement les outils traditionnels d'analyse des données, mais aussi ceux de data science. Outre ses qualités de datascientist, il est important de pouvoir travailler avec une personne de confiance. Samadou ne vous décevra pas !" data-en="Samadou graduated top of his class with high honours in 'Big Data, Data Science and Risk Analysis with Python'. He has a strong command of traditional data analysis tools as well as data science ones. Beyond his data science skills, it matters to work with someone you can trust. Samadou will not disappoint you!">Samadou a fini major de promotion avec mention très bien du diplôme « Big Data, Data Science et analyse des risques sous Python ». Il maîtrise parfaitement les outils traditionnels d'analyse des données, mais aussi ceux de data science. Outre ses qualités de datascientist, il est important de pouvoir travailler avec une personne de confiance. Samadou ne vous décevra pas !</p>
+        <div class="testi-who">
+          <div class="testi-avatar">SM</div>
+          <div>
+            <div class="testi-name">Stéphane Mussard</div>
+            <div class="testi-role" data-fr="Professeur des Universités, Nîmes Université — son professeur" data-en="University Professor, Nîmes University — his teacher">Professeur des Universités, Nîmes Université — son professeur</div>
+          </div>
+        </div>
+      </div>
+      <div class="testi-card reveal">
+        <div class="testi-quote">"</div>
+        <p class="testi-text" data-fr="Samad est un Data Analyst doté d'une grande motivation et d'un esprit curieux. Sa soif de comprendre les subtilités de chaque projet et son sérieux dans l'application de ses compétences font de lui un collègue précieux. Je recommande vivement Samad pour toute opportunité où rigueur et soif d'apprendre sont des qualités recherchées." data-en="Samad is a highly motivated Data Analyst with a curious mind. His drive to understand the ins and outs of every project and his rigour make him a valuable colleague. I strongly recommend Samad for any opportunity where rigour and eagerness to learn are valued.">Samad est un Data Analyst doté d'une grande motivation et d'un esprit curieux. Sa soif de comprendre les subtilités de chaque projet et son sérieux dans l'application de ses compétences font de lui un collègue précieux. Je recommande vivement Samad pour toute opportunité où rigueur et soif d'apprendre sont des qualités recherchées.</p>
+        <div class="testi-who">
+          <div class="testi-avatar">CQ</div>
+          <div>
+            <div class="testi-name">Coline Quilgars</div>
+            <div class="testi-role" data-fr="Analytics Engineer — sa mentor chez Canal+" data-en="Analytics Engineer — his mentor at Canal+">Analytics Engineer — sa mentor chez Canal+</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
 <section id="contact">
   <div class="wrap">
     <div class="contact-box reveal">
-      <div class="sec-num" style="text-align:center">05 — Contact</div>
+      <div class="sec-num" style="text-align:center">07 — Contact</div>
       <h2 data-fr="Construisons quelque chose ensemble." data-en="Let's build something together.">Construisons quelque chose ensemble.</h2>
-      <p data-fr="Disponible immédiatement pour un CDI (priorité), un CDD ou une mission freelance. Parlons de vos besoins en analyse, automatisation ou tableaux de bord." data-en="Available now for a permanent role (priority), a contract or freelance work. Let's talk about your analytics, automation or dashboard needs.">Disponible immédiatement pour un CDI (priorité), un CDD ou une mission freelance. Parlons de vos besoins en analyse, automatisation ou tableaux de bord.</p>
+      <p data-fr="Disponible rapidement (préavis à négocier) pour un CDI (priorité) ou une mission freelance. Parlons de vos besoins en analyse, qualité de données ou tableaux de bord." data-en="Available soon (notice period negotiable) for a permanent role (priority) or freelance work. Let's talk about your analytics, data quality or dashboard needs.">Disponible rapidement (préavis à négocier) pour un CDI (priorité) ou une mission freelance. Parlons de vos besoins en analyse, qualité de données ou tableaux de bord.</p>
       <div class="contact-links">
-        <a class="btn btn-primary" href="mailto:samad.kodon@gmail.com">✉ <span data-fr="M'écrire" data-en="Email me">M'écrire</span></a>
+        <a class="btn btn-primary" href="mailto:samadou.kodon@gmail.com">✉ <span data-fr="M'écrire" data-en="Email me">M'écrire</span></a>
         <a class="btn btn-ghost" href="https://linkedin.com/in/skodon" target="_blank" rel="noopener">in · LinkedIn</a>
         <a class="btn btn-ghost" href="https://github.com/Samadkod" target="_blank" rel="noopener">⌥ GitHub</a>
+        <a class="btn btn-ghost" href="assets/CV_Samadou_KODON.pdf" target="_blank" rel="noopener" download data-fr="📄 CV" data-en="📄 Resume">📄 CV</a>
       </div>
     </div>
   </div>
@@ -367,6 +512,24 @@ const io=new IntersectionObserver(es=>{
   es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}});
 },{threshold:.12});
 document.querySelectorAll('.reveal').forEach((el,i)=>{el.style.transitionDelay=(i%4*60)+'ms';io.observe(el);});
+
+// COUNT-UP on key stats
+function animateCount(el){
+  const target=parseInt(el.getAttribute('data-target'),10);
+  const suffix=el.getAttribute('data-suffix')||'';
+  const start=performance.now(),duration=1100;
+  function tick(now){
+    const p=Math.min((now-start)/duration,1);
+    const eased=1-Math.pow(1-p,3);
+    el.textContent=Math.round(eased*target).toLocaleString('fr-FR')+suffix;
+    if(p<1)requestAnimationFrame(tick);
+  }
+  requestAnimationFrame(tick);
+}
+const countIo=new IntersectionObserver(es=>{
+  es.forEach(e=>{if(e.isIntersecting){animateCount(e.target);countIo.unobserve(e.target);}});
+},{threshold:.5});
+document.querySelectorAll('.num').forEach(el=>countIo.observe(el));
 </script>
 </body>
 </html>
