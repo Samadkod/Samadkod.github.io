@@ -62,8 +62,14 @@ nav{
   border-bottom:1px solid var(--line);
 }
 .nav-in{display:flex;align-items:center;justify-content:space-between;height:64px;max-width:1080px;margin:0 auto;padding:0 24px}
-.logo{font-family:'Fraunces',serif;font-weight:600;font-size:1.25rem;letter-spacing:-.02em}
+.logo{font-family:'Fraunces',serif;font-weight:600;font-size:1.25rem;letter-spacing:-.02em;display:flex;align-items:center;gap:10px}
 .logo span{color:var(--accent)}
+.logo-badge{
+  width:30px;height:30px;border-radius:50%;flex-shrink:0;
+  background:linear-gradient(135deg,var(--accent),var(--accent-2));
+  color:#0d0f14;font-family:'Outfit',sans-serif;font-weight:700;font-size:.72rem;
+  display:flex;align-items:center;justify-content:center;
+}
 .nav-links{display:flex;gap:28px;align-items:center}
 .nav-links a{font-size:.9rem;color:var(--text-soft);transition:color .2s;font-weight:500}
 .nav-links a:hover{color:var(--text)}
@@ -231,7 +237,7 @@ footer{border-top:1px solid var(--line);padding:30px 0;text-align:center;color:v
 
 <nav>
   <div class="nav-in">
-    <a href="#home" class="logo">Samadou<span>.</span></a>
+    <a href="#home" class="logo"><span class="logo-badge">SK</span>Samadou<span>.</span></a>
     <div class="nav-links">
       <a href="#about" data-fr="À propos" data-en="About">À propos</a>
       <a href="#skills" data-fr="Compétences" data-en="Skills">Compétences</a>
@@ -287,10 +293,10 @@ footer{border-top:1px solid var(--line);padding:30px 0;text-align:center;color:v
         <p data-fr="Mon approche : des outils <strong>simples, visuels et concrets</strong> — qui parlent à tous, pas seulement aux data scientists. Et j'utilise l'<strong>IA</strong> pour gagner en efficacité au quotidien." data-en="My approach: <strong>simple, visual, concrete</strong> tools — for everyone, not just data scientists. And I use <strong>AI</strong> daily to work more efficiently.">Mon approche : des outils <strong>simples, visuels et concrets</strong> — qui parlent à tous, pas seulement aux data scientists. Et j'utilise l'<strong>IA</strong> pour gagner en efficacité au quotidien.</p>
       </div>
       <div class="about-side reveal">
-        <div class="fact"><div class="big">3 <span style="font-size:1rem;color:var(--text-soft)" data-fr="ans" data-en="yrs">ans</span></div><div class="lbl" data-fr="d'expérience data" data-en="data experience">d'expérience data</div></div>
-        <div class="fact"><div class="big">11 700+</div><div class="lbl" data-fr="sites pilotés en qualité &amp; migration data (OCEA)" data-en="sites managed for data quality &amp; migration (OCEA)">sites pilotés en qualité &amp; migration data (OCEA)</div></div>
-        <div class="fact"><div class="big">14</div><div class="lbl" data-fr="marchés analysés chez Canal+ (10 pays Afrique subsaharienne + 4 DROM)" data-en="markets analysed at Canal+ (10 Sub-Saharan African countries + 4 overseas territories)">marchés analysés chez Canal+ (10 pays Afrique subsaharienne + 4 DROM)</div></div>
-        <div class="fact"><div class="big">80%+</div><div class="lbl" data-fr="rétention chauffeurs pilotée chez Gozem" data-en="driver retention rate driven at Gozem">rétention chauffeurs pilotée chez Gozem</div></div>
+        <div class="fact"><div class="big"><span class="num" data-target="3">0</span> <span style="font-size:1rem;color:var(--text-soft)" data-fr="ans" data-en="yrs">ans</span></div><div class="lbl" data-fr="d'expérience data" data-en="data experience">d'expérience data</div></div>
+        <div class="fact"><div class="big"><span class="num" data-target="11700" data-suffix="+">0</span></div><div class="lbl" data-fr="sites pilotés en qualité &amp; migration data (OCEA)" data-en="sites managed for data quality &amp; migration (OCEA)">sites pilotés en qualité &amp; migration data (OCEA)</div></div>
+        <div class="fact"><div class="big"><span class="num" data-target="14">0</span></div><div class="lbl" data-fr="marchés analysés chez Canal+ (10 pays Afrique subsaharienne + 4 DROM)" data-en="markets analysed at Canal+ (10 Sub-Saharan African countries + 4 overseas territories)">marchés analysés chez Canal+ (10 pays Afrique subsaharienne + 4 DROM)</div></div>
+        <div class="fact"><div class="big"><span class="num" data-target="80" data-suffix="%+">0</span></div><div class="lbl" data-fr="rétention chauffeurs pilotée chez Gozem" data-en="driver retention rate driven at Gozem">rétention chauffeurs pilotée chez Gozem</div></div>
       </div>
     </div>
   </div>
@@ -506,6 +512,24 @@ const io=new IntersectionObserver(es=>{
   es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}});
 },{threshold:.12});
 document.querySelectorAll('.reveal').forEach((el,i)=>{el.style.transitionDelay=(i%4*60)+'ms';io.observe(el);});
+
+// COUNT-UP on key stats
+function animateCount(el){
+  const target=parseInt(el.getAttribute('data-target'),10);
+  const suffix=el.getAttribute('data-suffix')||'';
+  const start=performance.now(),duration=1100;
+  function tick(now){
+    const p=Math.min((now-start)/duration,1);
+    const eased=1-Math.pow(1-p,3);
+    el.textContent=Math.round(eased*target).toLocaleString('fr-FR')+suffix;
+    if(p<1)requestAnimationFrame(tick);
+  }
+  requestAnimationFrame(tick);
+}
+const countIo=new IntersectionObserver(es=>{
+  es.forEach(e=>{if(e.isIntersecting){animateCount(e.target);countIo.unobserve(e.target);}});
+},{threshold:.5});
+document.querySelectorAll('.num').forEach(el=>countIo.observe(el));
 </script>
 </body>
 </html>
